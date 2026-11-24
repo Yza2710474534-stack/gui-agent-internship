@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-11-24T14:43:10+08:00",
+  "tests_run": 126,
+  "failures": 4,
+  "errors": 5,
+  "skipped": 0,
+  "passed": false,
+  "scope": "Automatic tests run in the prepared GitHub snapshot; no new real-desktop, browser or training evaluation.",
+  "runtime": "Existing project Python 3.12 environment, separate from the copy.",
+  "log": "verification/2026-11-24/regression.log"
+}

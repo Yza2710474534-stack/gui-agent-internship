@@ -1,0 +1,20 @@
+{
+  "scope": "Original frontend-only history; full project chronology is documented separately.",
+  "commits": [
+    {
+      "sha": "036045ed5bef9019a56685e5445252abd0956f06",
+      "author_date": "2026-10-16T17:10:18+08:00",
+      "subject": "Update Site source"
+    },
+    {
+      "sha": "6ae5a104652ed246fc44300ead4d90b32b7514ca",
+      "author_date": "2026-09-25T12:38:19+08:00",
+      "subject": "Update Site source"
+    },
+    {
+      "sha": "60e2bb4cdeaed14acfa8ef946cd4015f720c9642",
+      "author_date": "2026-09-25T12:23:09+08:00",
+      "subject": "Update Site source"
+    }
+  ]
+}

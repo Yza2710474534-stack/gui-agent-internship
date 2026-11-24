@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-11-24T14:44:51+08:00",
+  "tests_run": 126,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "scope": "Automatic tests in the prepared repository, including local HTTP with a fake executor; no new real desktop/browser/model evaluation.",
+  "log": "verification/2026-11-24/regression.log",
+  "initial_attempt": "Initial attempt missed required saved screenshot fixtures and local port permissions; retained as regression_initial.log."
+}

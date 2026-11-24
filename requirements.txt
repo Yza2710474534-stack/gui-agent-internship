@@ -1,0 +1,3 @@
+# Runtime dependencies; Python 3.12 recommended.
+-r requirements-week2.txt
+-r requirements-week3.txt

@@ -1,0 +1,137 @@
+test_click_guard (test_demo.DemoTests.test_click_guard) ... ok
+test_feedback_requires_new_labels_and_image_change (test_demo.DemoTests.test_feedback_requires_new_labels_and_image_change) ... ok
+test_missing_or_ambiguous_target_never_proposes_click (test_demo.DemoTests.test_missing_or_ambiguous_target_never_proposes_click) ... ok
+test_scale_and_offset (test_demo.DemoTests.test_scale_and_offset) ... ok
+test_extracts_supported_tasks (test_local_bridge.LocalBridgeTest.test_extracts_supported_tasks) ... ok
+test_health_allows_published_origin (test_local_bridge.LocalBridgeTest.test_health_allows_published_origin) ... [24/Nov/2026 14:44:49] "GET /api/health HTTP/1.1" 200 -
+ok
+test_rejects_untrusted_origin (test_local_bridge.LocalBridgeTest.test_rejects_untrusted_origin) ... [24/Nov/2026 14:44:49] "GET /api/health HTTP/1.1" 403 -
+ok
+test_serves_local_frontend (test_local_bridge.LocalBridgeTest.test_serves_local_frontend) ... [24/Nov/2026 14:44:50] "GET / HTTP/1.1" 200 -
+ok
+test_starts_and_reports_preview_task (test_local_bridge.LocalBridgeTest.test_starts_and_reports_preview_task) ... [24/Nov/2026 14:44:50] "POST /api/tasks HTTP/1.1" 202 -
+[24/Nov/2026 14:44:50] "GET /api/tasks/9485b0d90400 HTTP/1.1" 200 -
+ok
+test_bad_output_size (test_modules.CaptureTests.test_bad_output_size) ... ok
+test_capture_backend_converts_bgra (test_modules.CaptureTests.test_capture_backend_converts_bgra) ... ok
+test_default_monitor_is_real_screen (test_modules.CaptureTests.test_default_monitor_is_real_screen) ... ok
+test_explicit_monitor_and_invalid_monitor (test_modules.CaptureTests.test_explicit_monitor_and_invalid_monitor) ... ok
+test_invalid_sequence_stops_before_capture (test_modules.CaptureTests.test_invalid_sequence_stops_before_capture) ... ok
+test_no_screen_is_reported (test_modules.CaptureTests.test_no_screen_is_reported) ... ok
+test_outside_region_never_grabs (test_modules.CaptureTests.test_outside_region_never_grabs) ... ok
+test_resized_frame_keeps_offset_and_scale (test_modules.CaptureTests.test_resized_frame_keeps_offset_and_scale) ... ok
+test_save_failure_is_reported (test_modules.CaptureTests.test_save_failure_is_reported) ... ok
+test_sequence_saves_three_images_and_metadata (test_modules.CaptureTests.test_sequence_saves_three_images_and_metadata) ... ok
+test_bad_position_never_clicks (test_modules.ControllerTests.test_bad_position_never_clicks) ... ok
+test_bad_scroll_and_duration (test_modules.ControllerTests.test_bad_scroll_and_duration) ... ok
+test_english_input (test_modules.ControllerTests.test_english_input) ... ok
+test_mac_drag_posts_full_sequence (test_modules.ControllerTests.test_mac_drag_posts_full_sequence) ... ok
+test_mac_drag_releases_on_interruption (test_modules.ControllerTests.test_mac_drag_releases_on_interruption) ... ok
+test_move_and_click (test_modules.ControllerTests.test_move_and_click) ... ok
+test_nonmac_drag_normal (test_modules.ControllerTests.test_nonmac_drag_normal) ... ok
+test_nonmac_drag_releases_on_failure (test_modules.ControllerTests.test_nonmac_drag_releases_on_failure) ... ok
+test_scroll_both_directions (test_modules.ControllerTests.test_scroll_both_directions) ... ok
+test_unsupported_text_never_types (test_modules.ControllerTests.test_unsupported_text_never_types) ... ok
+test_invalid_coordinates_and_dimensions (test_modules.CoordinateTests.test_invalid_coordinates_and_dimensions) ... ok
+test_negative_screen_offset (test_modules.CoordinateTests.test_negative_screen_offset) ... ok
+test_various_resolutions_and_retina_simulation (test_modules.CoordinateTests.test_various_resolutions_and_retina_simulation) ... ok
+test_absent_icon_returns_none (test_modules.ElementTests.test_absent_icon_returns_none) ... ok
+test_bad_box_and_missing_target (test_modules.ElementTests.test_bad_box_and_missing_target) ... ok
+test_flat_template_is_rejected (test_modules.ElementTests.test_flat_template_is_rejected) ... ok
+test_icon_location (test_modules.ElementTests.test_icon_location) ... ok
+test_scaled_icon (test_modules.ElementTests.test_scaled_icon) ... ok
+test_visualization_draws_without_changing_original (test_modules.ElementTests.test_visualization_draws_without_changing_original) ... ok
+test_bad_confidence_and_scale (test_modules.OCRTests.test_bad_confidence_and_scale) ... ok
+test_low_confidence_is_separated (test_modules.OCRTests.test_low_confidence_is_separated) ... ok
+test_missing_image (test_modules.OCRTests.test_missing_image) ... ok
+test_ocr_coordinates_restore_to_input_image (test_modules.OCRTests.test_ocr_coordinates_restore_to_input_image) ... ok
+test_all_success_finishes_task (test_week3_agent.Week3AgentTests.test_all_success_finishes_task) ... ok
+test_current_action_is_first_step (test_week3_agent.Week3AgentTests.test_current_action_is_first_step) ... ok
+test_empty_task_is_rejected (test_week3_agent.Week3AgentTests.test_empty_task_is_rejected) ... ok
+test_failure_marks_step_for_retry (test_week3_agent.Week3AgentTests.test_failure_marks_step_for_retry) ... ok
+test_invalid_json_is_rejected (test_week3_agent.Week3AgentTests.test_invalid_json_is_rejected) ... ok
+test_more_than_eight_steps_is_rejected (test_week3_agent.Week3AgentTests.test_more_than_eight_steps_is_rejected) ... ok
+test_offline_agent_creates_search_plan (test_week3_agent.Week3AgentTests.test_offline_agent_creates_search_plan) ... ok
+test_prompt_contains_original_task (test_week3_agent.Week3AgentTests.test_prompt_contains_original_task) ... ok
+test_success_moves_to_next_step_without_changing_input (test_week3_agent.Week3AgentTests.test_success_moves_to_next_step_without_changing_input) ... ok
+test_action_text_classification (test_week3_batch.Week3BatchTests.test_action_text_classification) ... ok
+test_batch_writes_splits_stats_and_error (test_week3_batch.Week3BatchTests.test_batch_writes_splits_stats_and_error) ... ok
+test_split_is_stable (test_week3_batch.Week3BatchTests.test_split_is_stable) ... ok
+test_step_numbers_must_be_continuous (test_week3_batch.Week3BatchTests.test_step_numbers_must_be_continuous) ... ok
+test_validate_good_and_missing_field (test_week3_batch.Week3BatchTests.test_validate_good_and_missing_field) ... ok
+test_bad_json_reports_line (test_week3_dataset.Week3DatasetTests.test_bad_json_reports_line) ... ok
+test_detect_three_sources (test_week3_dataset.Week3DatasetTests.test_detect_three_sources) ... ok
+test_huggingface_rows_wrapper (test_week3_dataset.Week3DatasetTests.test_huggingface_rows_wrapper) ... ok
+test_input_is_not_modified (test_week3_dataset.Week3DatasetTests.test_input_is_not_modified) ... ok
+test_mind2web_drops_html_and_keeps_operations (test_week3_dataset.Week3DatasetTests.test_mind2web_drops_html_and_keeps_operations) ... ok
+test_missing_or_invalid_fields (test_week3_dataset.Week3DatasetTests.test_missing_or_invalid_fields) ... ok
+test_normalize_fields (test_week3_dataset.Week3DatasetTests.test_normalize_fields) ... ok
+test_preprocess_writes_one_json_line (test_week3_dataset.Week3DatasetTests.test_preprocess_writes_one_json_line) ... ok
+test_screenagent_fields (test_week3_dataset.Week3DatasetTests.test_screenagent_fields) ... ok
+test_screenagent_files_get_unique_task_ids (test_week3_dataset.Week3DatasetTests.test_screenagent_files_get_unique_task_ids) ... ScreenAgent：2 条
+ok
+test_unknown_source (test_week3_dataset.Week3DatasetTests.test_unknown_source) ... ok
+test_api_requires_model_and_address (test_week3_model.Week3ModelTests.test_api_requires_model_and_address) ... ok
+test_deepseek_official_address_bypasses_proxy (test_week3_model.Week3ModelTests.test_deepseek_official_address_bypasses_proxy) ... ok
+test_deepseek_requires_api_key (test_week3_model.Week3ModelTests.test_deepseek_requires_api_key) ... ok
+test_image_is_encoded (test_week3_model.Week3ModelTests.test_image_is_encoded) ... ok
+test_missing_image_is_rejected (test_week3_model.Week3ModelTests.test_missing_image_is_rejected) ... ok
+test_mock_returns_valid_plan_json (test_week3_model.Week3ModelTests.test_mock_returns_valid_plan_json) ... ok
+test_ollama_multimodal_request (test_week3_model.Week3ModelTests.test_ollama_multimodal_request) ... ok
+test_openai_compatible_request (test_week3_model.Week3ModelTests.test_openai_compatible_request) ... ok
+test_unknown_provider_is_rejected (test_week3_model.Week3ModelTests.test_unknown_provider_is_rejected) ... ok
+test_exception_is_retried_and_can_recover (test_week3_runtime.Week3RuntimeTests.test_exception_is_retried_and_can_recover) ... ok
+test_failed_step_retries_then_recovers (test_week3_runtime.Week3RuntimeTests.test_failed_step_retries_then_recovers) ... ok
+test_max_action_guard_stops_runaway_retry (test_week3_runtime.Week3RuntimeTests.test_max_action_guard_stops_runaway_retry) ... ok
+test_query_without_search_results_is_not_done (test_week3_runtime.Week3RuntimeTests.test_query_without_search_results_is_not_done) ... ok
+test_real_chrome_search_screenshot_meets_done_condition (test_week3_runtime.Week3RuntimeTests.test_real_chrome_search_screenshot_meets_done_condition) ... ok
+test_real_saved_screenshot_single_step_is_verified (test_week3_runtime.Week3RuntimeTests.test_real_saved_screenshot_single_step_is_verified) ... ok
+test_retry_exhaustion_stops_remaining_steps (test_week3_runtime.Week3RuntimeTests.test_retry_exhaustion_stops_remaining_steps) ... ok
+test_screenshot_size_mismatch_is_rejected (test_week3_runtime.Week3RuntimeTests.test_screenshot_size_mismatch_is_rejected) ... ok
+test_six_step_task_collects_structured_logs_and_completes (test_week3_runtime.Week3RuntimeTests.test_six_step_task_collects_structured_logs_and_completes) ... ok
+test_steps_pass_but_completion_check_fails (test_week3_runtime.Week3RuntimeTests.test_steps_pass_but_completion_check_fails) ... ok
+test_all_workflows_run_through_long_task_state_machine (test_week3_task_catalog.Week3TaskCatalogTests.test_all_workflows_run_through_long_task_state_machine) ... ok
+test_browser_search_is_real_and_other_workflows_are_labeled (test_week3_task_catalog.Week3TaskCatalogTests.test_browser_search_is_real_and_other_workflows_are_labeled) ... ok
+test_catalog_has_five_different_workflows (test_week3_task_catalog.Week3TaskCatalogTests.test_catalog_has_five_different_workflows) ... ok
+test_each_workflow_has_multiple_steps (test_week3_task_catalog.Week3TaskCatalogTests.test_each_workflow_has_multiple_steps) ... ok
+test_unknown_workflow_is_rejected (test_week3_task_catalog.Week3TaskCatalogTests.test_unknown_workflow_is_rejected) ... ok
+test_bad_record_is_rejected (test_week3_trajectory_demo.Week3TrajectoryDemoTests.test_bad_record_is_rejected) ... ok
+test_invalid_limit_is_rejected (test_week3_trajectory_demo.Week3TrajectoryDemoTests.test_invalid_limit_is_rejected) ... ok
+test_read_tasks_respects_limit (test_week3_trajectory_demo.Week3TrajectoryDemoTests.test_read_tasks_respects_limit) ... ok
+test_run_demo_saves_summary (test_week3_trajectory_demo.Week3TrajectoryDemoTests.test_run_demo_saves_summary) ... ok
+test_simulation_finishes_without_desktop_action (test_week3_trajectory_demo.Week3TrajectoryDemoTests.test_simulation_finishes_without_desktop_action) ... ok
+test_capture_observation_saves_aligned_ocr_evidence (test_week4_observation.Week4ObservationTests.test_capture_observation_saves_aligned_ocr_evidence) ... ok
+test_mismatched_ocr_size_is_rejected (test_week4_observation.Week4ObservationTests.test_mismatched_ocr_size_is_rejected) ... ok
+test_observer_forwards_state_independently (test_week4_observation.Week4ObservationTests.test_observer_forwards_state_independently) ... ok
+test_model_decider_calls_model_and_parses_result (test_week4_planner.Week4PlannerTests.test_model_decider_calls_model_and_parses_result) ... ok
+test_parses_allowed_action (test_week4_planner.Week4PlannerTests.test_parses_allowed_action) ... ok
+test_parses_done_and_stop (test_week4_planner.Week4PlannerTests.test_parses_done_and_stop) ... ok
+test_prompt_has_task_and_safety_contract (test_week4_planner.Week4PlannerTests.test_prompt_has_task_and_safety_contract) ... ok
+test_rejects_code_shell_and_extra_fields (test_week4_planner.Week4PlannerTests.test_rejects_code_shell_and_extra_fields) ... ok
+test_action_failure_can_retry_then_recover (test_week4_realtime.Week4RealtimeTests.test_action_failure_can_retry_then_recover) ... ok
+test_action_limit_stops_before_extra_execution (test_week4_realtime.Week4RealtimeTests.test_action_limit_stops_before_extra_execution) ... ok
+test_action_validation_rejects_out_of_range_wait (test_week4_realtime.Week4RealtimeTests.test_action_validation_rejects_out_of_range_wait) ... ok
+test_action_validation_rejects_unknown_and_chinese_input (test_week4_realtime.Week4RealtimeTests.test_action_validation_rejects_unknown_and_chinese_input) ... ok
+test_done_requires_completion_verification (test_week4_realtime.Week4RealtimeTests.test_done_requires_completion_verification) ... ok
+test_failed_verification_stops_live_loop (test_week4_realtime.Week4RealtimeTests.test_failed_verification_stops_live_loop) ... ok
+test_live_runs_two_actions_then_done (test_week4_realtime.Week4RealtimeTests.test_live_runs_two_actions_then_done) ... ok
+test_preview_never_calls_execute (test_week4_realtime.Week4RealtimeTests.test_preview_never_calls_execute) ... ok
+test_stop_decision_is_recorded (test_week4_realtime.Week4RealtimeTests.test_stop_decision_is_recorded) ... ok
+test_timeout_stops_before_observation (test_week4_realtime.Week4RealtimeTests.test_timeout_stops_before_observation) ... ok
+test_completion_factory_uses_query (test_week4_search.Week4SearchTests.test_completion_factory_uses_query) ... ok
+test_existing_real_search_evidence_passes (test_week4_search.Week4SearchTests.test_existing_real_search_evidence_passes) ... ok
+test_missing_evidence_is_rejected (test_week4_search.Week4SearchTests.test_missing_evidence_is_rejected) ... ok
+test_post_action_requires_saved_files (test_week4_search.Week4SearchTests.test_post_action_requires_saved_files) ... ok
+test_failure_is_recorded_and_does_not_raise (test_week5_capture_probe.Week5CaptureProbeTests.test_failure_is_recorded_and_does_not_raise) ... ok
+test_success_saves_summary_without_desktop_actions (test_week5_capture_probe.Week5CaptureProbeTests.test_success_saves_summary_without_desktop_actions) ... ok
+test_completion_requires_successful_history (test_week8_verification.ClickVerificationTest.test_completion_requires_successful_history) ... ok
+test_expected_text_required_when_requested (test_week8_verification.ClickVerificationTest.test_expected_text_required_when_requested) ... ok
+test_limits_release_task_slot (test_week8_verification.ClickVerificationTest.test_limits_release_task_slot) ... ok
+test_missing_and_corrupt_evidence_fail_closed (test_week8_verification.ClickVerificationTest.test_missing_and_corrupt_evidence_fail_closed) ... ok
+test_task_extracts_explicit_completion (test_week8_verification.ClickVerificationTest.test_task_extracts_explicit_completion) ... ok
+test_without_business_condition_is_explicitly_labelled (test_week8_verification.ClickVerificationTest.test_without_business_condition_is_explicitly_labelled) ... ok
+
+----------------------------------------------------------------------
+Ran 126 tests in 2.827s
+
+OK
