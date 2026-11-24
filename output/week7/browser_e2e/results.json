@@ -1,0 +1,815 @@
+{
+  "checked_at": "2026-10-09T06:46:23.835Z",
+  "browser": "Google Chrome headless via Playwright",
+  "backend": "real local bridge and LocalExecutor, preview only",
+  "cases": [
+    {
+      "id": "preview_success",
+      "type": "browser E2E / actual screenshot and OCR",
+      "result": "passed",
+      "task_id": "3fa39313cd43",
+      "status": "动作方案已生成",
+      "ocr": "93 项",
+      "screenshot": "截图已加载，可复核本次屏幕观察"
+    },
+    {
+      "id": "live_rejection",
+      "type": "browser E2E / safety",
+      "result": "passed",
+      "trigger": "click live and start",
+      "backend_response": 403,
+      "ui": "本地执行器当前只允许预览；重新启动时加入 --enable-live 才能执行点击"
+    },
+    {
+      "id": "screenshot_failure",
+      "type": "browser network fault / image response 404",
+      "result": "passed",
+      "task_id": "e4133489af23",
+      "injected_requests": 1,
+      "ui": "截图加载失败，请查看本地执行器日志"
+    },
+    {
+      "id": "screenshot_recovery",
+      "type": "browser E2E / recovery",
+      "result": "passed",
+      "ui": "截图已加载，可复核本次屏幕观察"
+    },
+    {
+      "id": "request_timeout",
+      "type": "browser network fault / POST delayed past 8000 ms",
+      "result": "passed",
+      "injected_requests": 1,
+      "ui": "最近接口：POST /api/tasks · 超时 · 本地执行器未响应"
+    },
+    {
+      "id": "timeout_recovery",
+      "type": "browser E2E / retry after timeout",
+      "result": "passed",
+      "task_id": "a749ed9af235"
+    },
+    {
+      "id": "service_disconnected",
+      "type": "browser E2E / actual service shutdown",
+      "result": "passed",
+      "ui": "最近接口：POST /api/tasks · 网络错误 · 本地执行器不可达"
+    },
+    {
+      "id": "service_recovered",
+      "type": "browser E2E / service restart",
+      "result": "passed",
+      "ui": "本地执行器已连接 · 仅预览",
+      "task_id": "b156de106f73"
+    }
+  ],
+  "widths": [
+    {
+      "viewport": 320,
+      "document": 320,
+      "body": 320,
+      "panel_widths": [
+        288,
+        288
+      ],
+      "controls": [
+        {
+          "id": "taskForm",
+          "left": 17,
+          "right": 303,
+          "width": 286
+        },
+        {
+          "id": "screenPreview",
+          "left": 35,
+          "right": 285,
+          "width": 250
+        },
+        {
+          "id": "runNote",
+          "left": 35,
+          "right": 189,
+          "width": 154
+        },
+        {
+          "id": "requestMeta",
+          "left": 35,
+          "right": 189,
+          "width": 154
+        }
+      ],
+      "task_id": "759197fc5193"
+    },
+    {
+      "viewport": 375,
+      "document": 375,
+      "body": 375,
+      "panel_widths": [
+        343,
+        343
+      ],
+      "controls": [
+        {
+          "id": "taskForm",
+          "left": 17,
+          "right": 358,
+          "width": 341
+        },
+        {
+          "id": "screenPreview",
+          "left": 35,
+          "right": 340,
+          "width": 305
+        },
+        {
+          "id": "runNote",
+          "left": 35,
+          "right": 214.296875,
+          "width": 179.296875
+        },
+        {
+          "id": "requestMeta",
+          "left": 35,
+          "right": 214.296875,
+          "width": 179.296875
+        }
+      ]
+    },
+    {
+      "viewport": 680,
+      "document": 680,
+      "body": 680,
+      "panel_widths": [
+        648,
+        648
+      ],
+      "controls": [
+        {
+          "id": "taskForm",
+          "left": 17,
+          "right": 663,
+          "width": 646
+        },
+        {
+          "id": "screenPreview",
+          "left": 35,
+          "right": 645,
+          "width": 610
+        },
+        {
+          "id": "runNote",
+          "left": 35,
+          "right": 214.296875,
+          "width": 179.296875
+        },
+        {
+          "id": "requestMeta",
+          "left": 35,
+          "right": 214.296875,
+          "width": 179.296875
+        }
+      ]
+    },
+    {
+      "viewport": 768,
+      "document": 768,
+      "body": 768,
+      "panel_widths": [
+        644,
+        644
+      ],
+      "controls": [
+        {
+          "id": "taskForm",
+          "left": 101,
+          "right": 743,
+          "width": 642
+        },
+        {
+          "id": "screenPreview",
+          "left": 123,
+          "right": 721,
+          "width": 598
+        },
+        {
+          "id": "runNote",
+          "left": 123,
+          "right": 302.296875,
+          "width": 179.296875
+        },
+        {
+          "id": "requestMeta",
+          "left": 123,
+          "right": 302.296875,
+          "width": 179.296875
+        }
+      ]
+    },
+    {
+      "viewport": 980,
+      "document": 980,
+      "body": 980,
+      "panel_widths": [
+        856,
+        856
+      ],
+      "controls": [
+        {
+          "id": "taskForm",
+          "left": 101,
+          "right": 955,
+          "width": 854
+        },
+        {
+          "id": "screenPreview",
+          "left": 123,
+          "right": 933,
+          "width": 810
+        },
+        {
+          "id": "runNote",
+          "left": 123,
+          "right": 302.296875,
+          "width": 179.296875
+        },
+        {
+          "id": "requestMeta",
+          "left": 123,
+          "right": 302.296875,
+          "width": 179.296875
+        }
+      ]
+    },
+    {
+      "viewport": 1280,
+      "document": 1280,
+      "body": 1280,
+      "panel_widths": [
+        481.90625,
+        634.078125
+      ],
+      "controls": [
+        {
+          "id": "taskForm",
+          "left": 111,
+          "right": 590.90625,
+          "width": 479.90625
+        },
+        {
+          "id": "screenPreview",
+          "left": 634.90625,
+          "right": 1222.984375,
+          "width": 588.078125
+        },
+        {
+          "id": "runNote",
+          "left": 133,
+          "right": 312.296875,
+          "width": 179.296875
+        },
+        {
+          "id": "requestMeta",
+          "left": 133,
+          "right": 312.296875,
+          "width": 179.296875
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/3fa39313cd43/screenshot",
+      "status": 200,
+      "resource_type": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 403,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23/screenshot",
+      "status": 200,
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23/screenshot",
+      "status": 404,
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/e4133489af23/screenshot",
+      "status": 200,
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a749ed9af235/screenshot",
+      "status": 200,
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/759197fc5193/screenshot",
+      "status": 200,
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73",
+      "status": 200,
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b156de106f73/screenshot",
+      "status": 200,
+      "resource_type": "image"
+    }
+  ],
+  "screenshots": [
+    "output/week7/browser_e2e/01_preview_success_1280.png",
+    "output/week7/browser_e2e/02_live_rejection_1280.png",
+    "output/week7/browser_e2e/03_screenshot_failure_1280.png",
+    "output/week7/browser_e2e/04_request_timeout_1280.png",
+    "output/week7/browser_e2e/width_320.png",
+    "output/week7/browser_e2e/width_320_preview_result.png",
+    "output/week7/browser_e2e/width_375.png",
+    "output/week7/browser_e2e/width_768.png",
+    "output/week7/browser_e2e/width_1280.png",
+    "output/week7/browser_e2e/05_service_disconnected_1280.png"
+  ],
+  "backend_log": "output/week7/browser_e2e/backend.log",
+  "result": "passed"
+}

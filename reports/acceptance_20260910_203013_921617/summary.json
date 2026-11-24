@@ -1,0 +1,170 @@
+{
+  "date": "2026-09-10T20:30:13.921716",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.14",
+  "checks": {
+    "unit_tests": {
+      "passed": true,
+      "log": "unittest.txt",
+      "method": "构造图片和模拟接口；不发送鼠标键盘事件"
+    },
+    "real_ocr": {
+      "passed": true,
+      "target": "编辑",
+      "matches": [
+        {
+          "text": "编辑",
+          "confidence": 0.9849742108838685,
+          "bbox": [
+            [
+              147.0,
+              8.0
+            ],
+            [
+              177.66666666666666,
+              8.0
+            ],
+            [
+              177.66666666666666,
+              24.666666666666668
+            ],
+            [
+              147.0,
+              24.666666666666668
+            ]
+          ],
+          "center": [
+            162.33333333333331,
+            16.333333333333336
+          ]
+        }
+      ],
+      "seconds": 1.796,
+      "method": "已有菜单截图，真实 EasyOCR 推理；不代表整体准确率"
+    },
+    "icon_template": {
+      "passed": true,
+      "match": {
+        "text": "模板图标",
+        "confidence": 0.999999463558197,
+        "bbox": [
+          [
+            17,
+            4
+          ],
+          [
+            37,
+            4
+          ],
+          [
+            37,
+            27
+          ],
+          [
+            17,
+            27
+          ]
+        ],
+        "center": [
+          27.0,
+          15.5
+        ],
+        "template_scale": 1.0
+      },
+      "method": "同图裁出的模板匹配；非跨主题、跨应用泛化测试"
+    },
+    "live_capture": {
+      "passed": true,
+      "frames": [
+        {
+          "captured_at": "2026-09-10T20:30:17.671329",
+          "screen_region": [
+            0,
+            0,
+            1470,
+            956
+          ],
+          "image_size": [
+            1470,
+            956
+          ],
+          "scale_to_screen": [
+            1.0,
+            1.0
+          ],
+          "capture_seconds": 0.0829349160194397,
+          "image": "screen_1_20260910_203017_671503.png",
+          "path": "/Users/ziang/Documents/ChatGPT/New project/output/acceptance/20260910_203013_921617/screen_1_20260910_203017_671503.png"
+        },
+        {
+          "captured_at": "2026-09-10T20:30:18.029769",
+          "screen_region": [
+            0,
+            0,
+            1470,
+            956
+          ],
+          "image_size": [
+            1470,
+            956
+          ],
+          "scale_to_screen": [
+            1.0,
+            1.0
+          ],
+          "capture_seconds": 0.04472400003578514,
+          "image": "screen_2_20260910_203018_029916.png",
+          "path": "/Users/ziang/Documents/ChatGPT/New project/output/acceptance/20260910_203013_921617/screen_2_20260910_203018_029916.png"
+        },
+        {
+          "captured_at": "2026-09-10T20:30:18.386130",
+          "screen_region": [
+            0,
+            0,
+            1470,
+            956
+          ],
+          "image_size": [
+            1470,
+            956
+          ],
+          "scale_to_screen": [
+            1.0,
+            1.0
+          ],
+          "capture_seconds": 0.03556879097595811,
+          "image": "screen_3_20260910_203018_386196.png",
+          "path": "/Users/ziang/Documents/ChatGPT/New project/output/acceptance/20260910_203013_921617/screen_3_20260910_203018_386196.png"
+        }
+      ],
+      "scaled": [
+        {
+          "captured_at": "2026-09-10T20:30:18.413398",
+          "screen_region": [
+            0,
+            0,
+            1470,
+            956
+          ],
+          "image_size": [
+            735,
+            478
+          ],
+          "scale_to_screen": [
+            2.0,
+            2.0
+          ],
+          "capture_seconds": 0.019226999953389168,
+          "image": "screen_1_20260910_203018_413518.png",
+          "path": "/Users/ziang/Documents/ChatGPT/New project/output/acceptance/20260910_203013_921617/scaled/screen_1_20260910_203018_413518.png"
+        }
+      ],
+      "method": "当前主屏幕实拍和半尺寸输出；未更改系统分辨率"
+    }
+  },
+  "limitations": [
+    "Windows/Linux及不同物理显示器未实测",
+    "控制接口仅操作主屏幕；英文输入前需手动切换ABC",
+    "真实点击与拖选的历史记录应与模拟测试分开判断"
+  ]
+}

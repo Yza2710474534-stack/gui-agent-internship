@@ -1,0 +1,99 @@
+{
+  "checked_at": "2026-10-02T02:11:47+08:00",
+  "frontend": "gui-agent-console/dist/index.html",
+  "backend": "http://127.0.0.1:8765",
+  "success_path": {
+    "trigger": "前端填写‘搜索 GUI Agent’并点击‘开始任务’",
+    "post": {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202
+    },
+    "poll": {
+      "method": "GET",
+      "path": "/api/tasks/9ebeb90ba8da",
+      "status": 200
+    },
+    "ui": [
+      "预览完成，没有执行鼠标或键盘",
+      "最近接口：GET /api/tasks/9ebeb90ba8da · 200 · 任务 9ebeb90ba8da",
+      "识别文字 99 项",
+      "安全检查 通过"
+    ],
+    "passed": true
+  },
+  "rejection_path": {
+    "trigger": "前端切换‘实时’并点击‘开始任务’",
+    "post": {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 403
+    },
+    "ui": [
+      "最近接口：POST /api/tasks · 403",
+      "本地执行器当前只允许预览；重新启动时加入 --enable-live 才能执行点击"
+    ],
+    "mouse_keyboard_actions": 0,
+    "passed": true
+  },
+  "offline_path": {
+    "trigger": "页面已连接后停止本地执行器，再从前端点击‘开始任务’",
+    "request": {
+      "method": "GET",
+      "path": "/api/health",
+      "status": "网络错误"
+    },
+    "ui": [
+      "本地执行器未连接",
+      "等待本地执行器",
+      "最近接口：GET /api/health · 网络错误 · 本地执行器不可达"
+    ],
+    "passed": true
+  },
+  "screenshot_roundtrip_path": {
+    "trigger": "前端成功任务返回 screenshot_url 后加载截图",
+    "task_id": "486671f340e8",
+    "ui": [
+      "预览完成",
+      "截图已加载，可复核本次屏幕观察",
+      "识别文字 101 项",
+      "安全检查 通过"
+    ],
+    "passed": true
+  },
+  "final_status_path": {
+    "trigger": "前端成功任务完成后等待健康检查轮询",
+    "task_id": "65f9cc4933d3",
+    "ui": [
+      "动作方案已生成",
+      "预览完成，没有执行鼠标或键盘",
+      "最近接口：GET /api/tasks/65f9cc4933d3 · 200 · 任务 65f9cc4933d3",
+      "截图已加载，可复核本次屏幕观察"
+    ],
+    "passed": true
+  },
+  "final_e2e_recheck": {
+    "checked_at": "2026-10-02T02:26:46+08:00",
+    "success_task_id": "060c04b24f91",
+    "success_ui": [
+      "动作方案已生成",
+      "最近接口：GET /api/tasks/060c04b24f91 · 200 · 任务 060c04b24f91",
+      "预览完成，没有执行鼠标或键盘",
+      "截图已加载，可复核本次屏幕观察",
+      "识别文字 101 项",
+      "安全检查 通过"
+    ],
+    "rejection": {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 403,
+      "ui": [
+        "最近接口：POST /api/tasks · 403",
+        "本地执行器当前只允许预览；重新启动时加入 --enable-live 才能执行点击"
+      ],
+      "mouse_keyboard_actions": 0
+    },
+    "passed": true
+  },
+  "project_screenshot": "/Users/ziang/Documents/ChatGPT/New project/output/week6/capture_probe/week5_probe_20261002_022345_321016.png"
+}

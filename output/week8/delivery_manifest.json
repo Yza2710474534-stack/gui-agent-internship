@@ -1,0 +1,38 @@
+{
+  "src/local_bridge.py": {
+    "bytes": 23165,
+    "sha256": "de3d010e9d7cbba4f4ecea138cc5fe24afa6c9870010f0547f81dcd876278ea8"
+  },
+  "src/week8_verification.py": {
+    "bytes": 1882,
+    "sha256": "37632cd5110117f9d7fbbb84a92c4cd9213ded06010bff2575f31ea74d484344"
+  },
+  "gui-agent-console/dist/index.html": {
+    "bytes": 47037,
+    "sha256": "00201361ae78f5011697f191db02e290440bb5dc4e585886d252ef99b0a4be99"
+  },
+  "output/docx/第八周周报.docx": {
+    "bytes": 263394,
+    "sha256": "280ee1af9a010b3febbd0f3077f3ea15ac1f44bee2b9e08f084dc119d695c573"
+  },
+  "output/docx/第八周验收测试报告.docx": {
+    "bytes": 625402,
+    "sha256": "849003363843339b6b3a7908a174d893803757a86cb849349c067ec6318998c7"
+  },
+  "output/docx/第八周项目结项报告.docx": {
+    "bytes": 283061,
+    "sha256": "5f73351639c28196e43b7a60c2e60031764264cf31bfc708acad43587de8312a"
+  },
+  "output/week8/verification/regression_summary.json": {
+    "bytes": 774,
+    "sha256": "b59e3c903f4b88cd0dbaf5b31c994912d0401537b36b9fee08788c286bf41dbe"
+  },
+  "output/week8/browser_regression/results.json": {
+    "bytes": 18364,
+    "sha256": "e935e7b922b385898dec9f5dfec021e7855fd12c5ef36e0d02c39abf3e247025"
+  },
+  "output/week8/live_e2e/results.json": {
+    "bytes": 129568,
+    "sha256": "8bca17c10599ffb4a2347c51a86f51c2cab1eff01831afaf2e471577091de0d8"
+  }
+}

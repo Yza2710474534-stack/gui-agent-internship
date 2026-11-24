@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "message": "真实搜索截图完成条件通过",
+  "evidence": {
+    "image": "/Users/ziang/Documents/ChatGPT/New project/output/week5/capture_probe/week5_probe_20260929_185433_602500.png",
+    "image_sha256": "04981f9816a4becb31931e3b9aac5ab73b3fdb7b5108c531b1791639a320dd22",
+    "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/ocr/ocr_20260929_185457_572028.json",
+    "browser_detected": true,
+    "query_evidence": [
+      "GUI Agent"
+    ],
+    "result_evidence": [
+      "GitHub",
+      "https;Ilgithub,",
+      "topics",
+      "gUi-agent",
+      "gui-agent",
+      "GitHub",
+      "Topics",
+      "GUIagent framework"
+    ]
+  }
+}

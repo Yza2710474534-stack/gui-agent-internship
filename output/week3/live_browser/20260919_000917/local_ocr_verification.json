@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "message": "真实搜索截图完成条件通过",
+  "evidence": {
+    "image": "/Users/ziang/Documents/ChatGPT/New project/output/screenshots/screen_1_20260919_171319_864597.png",
+    "image_sha256": "dc16d982831f142220980692f4bc0b3541d7e895f3a61c7508ee5e821e1687a8",
+    "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/ocr/ocr_20260919_171420_361782.json",
+    "browser_detected": true,
+    "query_evidence": [
+      "gui agent"
+    ],
+    "result_evidence": [
+      "GitHub",
+      "https;Ilgithub,",
+      "topics",
+      "gUi-agents",
+      "gui-agents",
+      "GitHub",
+      "Topics",
+      "0到1快速搭建个GUI Agent",
+      "PC GUI Agent就可以基于纯G01界面理解页面",
+      "GItHub"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "task": "点击编辑菜单",
+  "model_name": "mock",
+  "status": "done",
+  "current_step": 4,
+  "steps": [
+    {
+      "step_id": 1,
+      "description": "观察当前界面",
+      "status": "done"
+    },
+    {
+      "step_id": 2,
+      "description": "定位“编辑菜单”的位置",
+      "status": "done"
+    },
+    {
+      "step_id": 3,
+      "description": "点击“编辑菜单”",
+      "status": "done"
+    },
+    {
+      "step_id": 4,
+      "description": "检查界面是否发生预期变化",
+      "status": "done"
+    }
+  ],
+  "done_condition": "点击“编辑菜单”后界面出现预期变化",
+  "history": [
+    {
+      "step_id": 1,
+      "success": true,
+      "feedback": "模拟完成：观察当前界面"
+    },
+    {
+      "step_id": 2,
+      "success": true,
+      "feedback": "模拟完成：定位“编辑菜单”的位置"
+    },
+    {
+      "step_id": 3,
+      "success": true,
+      "feedback": "模拟完成：点击“编辑菜单”"
+    },
+    {
+      "step_id": 4,
+      "success": true,
+      "feedback": "模拟完成：检查界面是否发生预期变化"
+    }
+  ]
+}

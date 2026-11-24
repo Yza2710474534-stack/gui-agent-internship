@@ -1,0 +1,23 @@
+{
+  "task": "打开浏览器并搜索 GUI Agent",
+  "execution_mode": "live_browser_control_cua",
+  "status": "done",
+  "observed_at": "2026-09-22T19:34:22+08:00",
+  "browser": "Google Chrome",
+  "url": "https://google.com/search?q=GUI+Agent",
+  "window_title": "GUI Agent - Google 搜索",
+  "conditions": {
+    "search_box_equals_query": true,
+    "results_heading_exists": true,
+    "gui_agent_result_exists": true,
+    "multiple_results_visible": true
+  },
+  "evidence": {
+    "accessibility_state_check": "passed",
+    "visual_screenshot_check": "passed_via_cua",
+    "project_mss_capture": "not_available_in_current_terminal",
+    "project_mss_error": "未检测到可用屏幕，请在本地终端运行并检查屏幕录制权限",
+    "ocr_saved": false,
+    "note": "当前 Chrome 页面通过 CUA 无障碍树和屏幕观察完成验证；未将不存在的终端截图或 OCR 结果标记为已保存。"
+  }
+}

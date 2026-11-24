@@ -1,0 +1,51 @@
+{
+  "task": "打开浏览器并搜索 GUI Agent",
+  "model_name": "mock",
+  "status": "done",
+  "current_step": 4,
+  "steps": [
+    {
+      "step_id": 1,
+      "description": "观察当前界面并确认浏览器位置",
+      "status": "done"
+    },
+    {
+      "step_id": 2,
+      "description": "打开浏览器并定位地址栏或搜索框",
+      "status": "done"
+    },
+    {
+      "step_id": 3,
+      "description": "输入“GUI Agent”并提交",
+      "status": "done"
+    },
+    {
+      "step_id": 4,
+      "description": "检查结果页是否出现相关内容",
+      "status": "done"
+    }
+  ],
+  "done_condition": "页面中出现与“GUI Agent”相关的搜索结果",
+  "history": [
+    {
+      "step_id": 1,
+      "success": true,
+      "feedback": "模拟完成：观察当前界面并确认浏览器位置"
+    },
+    {
+      "step_id": 2,
+      "success": true,
+      "feedback": "模拟完成：打开浏览器并定位地址栏或搜索框"
+    },
+    {
+      "step_id": 3,
+      "success": true,
+      "feedback": "模拟完成：输入“GUI Agent”并提交"
+    },
+    {
+      "step_id": 4,
+      "success": true,
+      "feedback": "模拟完成：检查结果页是否出现相关内容"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-09-29T18:56:59",
+  "status": "capture_ready",
+  "project_mss": "available",
+  "mouse_keyboard_actions": 0,
+  "image": "/Users/ziang/Documents/ChatGPT/New project/output/week5/capture_probe/week5_probe_20260929_185729_902162.png",
+  "image_size": [
+    1470,
+    956
+  ],
+  "screen_region": [
+    0,
+    0,
+    1470,
+    956
+  ],
+  "scale_to_screen": [
+    1.0,
+    1.0
+  ]
+}

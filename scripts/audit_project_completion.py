@@ -1,0 +1,89 @@
+"""Evidence-based audit against the original outline, separate from engineering tests."""
+import hashlib
+import json
+from collections import Counter
+from datetime import datetime
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'output/week8/final_audit'
+
+# Requirement IDs refer to the numbered execution tasks in the original PDF.
+ROWS = [
+('W1.1',1,1,'技术文章与背景调研','已完成','第一周研究报告及阶段交付物；不将历史调研称为当前最新综述','output/pdf/week1_gui_agent_research_report.pdf'),
+('W1.2',1,1,'UI TARS Claude Computer Use ScreenAgent研究','已完成','历史研究报告包含技术路线对照','output/docx/第一周阶段交付物.docx'),
+('W1.3',1,1,'核心架构和挑战分析','已完成','感知规划执行反馈、坐标与长任务挑战已说明','output/pdf/week1_gui_agent_research_report.pdf'),
+('W1.4',1,1,'Python环境与基础工具验证','已完成','macOS虚拟环境和依赖实测；CUDA为有GPU时的条件项','reports/week2_environment.txt'),
+('W2.1',2,1,'跨平台实时截图及多分辨率','部分完成','macOS截图实测；其他尺寸多为构造数据，Windows/Linux无真机验收','src/screen_capture.py; WEEK2_README.md'),
+('W2.2',2,2,'OCR文字与UI元素识别','已完成','真实EasyOCR与有限模板匹配已验证；不等于任意UI理解','src/ocr_engine.py; src/element_locator.py'),
+('W2.3',2,2,'点击输入滚动拖拽控制','已完成','基础函数、模拟测试及历史Mac操作记录；中文输入受限','src/controller.py; WEEK2_README.md'),
+('W2.4',2,2,'坐标定位与边界框绘制','已完成','坐标映射与绘框实现和测试已保存','src/coordinate.py; src/visualizer.py'),
+('W3.1',3,2,'公开GUI数据下载与预处理','部分完成','有脚本及3821条Kaggle历史摘要；本地仅814条及732/82划分，全量产物未回传','scripts/week3_kaggle_full_preprocess.py; reports/week3/kaggle_full_summary.txt; data/week3/splits/statistics.json'),
+('W3.2',3,2,'基础多模态Agent框架','部分完成','LangChain管线和图片调用接口存在；未验证实际多模态模型驱动的桌面任务','src/week3_agent.py; src/week3_model.py'),
+('W3.3',3,2,'简单任务拆解与规划','已完成','mock及历史DeepSeek文字规划已记录；与真实自动执行区分','reports/week3/deepseek_summary.txt'),
+('W3.4',3,2,'开源多模态模型本地部署及API','部分完成','API/Ollama及图片编码接口存在；没有本地VLM部署和真实视觉API验收证据','src/week3_model.py; WEEK3_README.md'),
+('W4.1',4,2,'感知控制Agent无缝集成','部分完成','规则驱动单步真实闭环已通过；模型规划未接入网页实时成功路径','src/local_bridge.py; output/week8/live_e2e/results.json'),
+('W4.2',4,2,'指令到反馈完整闭环','部分完成','一次真实点击从前端到反馈完成；不代表通用多步或五类任务完成','output/week8/live_e2e/results.json'),
+('W4.3',4,2,'命令行交互界面','已完成','基础Agent和实时演示均有CLI入口','src/week3_agent.py; scripts/run_week4_realtime_demo.py'),
+('W4.4',4,2,'五类基础桌面任务真实调试','部分完成','有搜索及单步操作；文件打开、消息发送和应用关闭缺完整实测；草稿不能替代发送','src/week3_task_catalog.py; WEEK3_README.md'),
+('W5.1',5,2,'构建微调训练及验证集','部分完成','存在轨迹划分；未形成经真实VLM训练验证的截图动作训练数据及全量本地产物','data/week3/splits/statistics.json; scripts/week3_kaggle_full_preprocess.py'),
+('W5.2',5,2,'PEFT多模态模型LoRA微调','缺失','未找到训练脚本、训练日志或LoRA adapter权重；EasyOCR权重不是本项目微调结果','src/; scripts/; artifacts/easyocr/models/'),
+('W5.3',5,2,'微调前后效果对比','缺失','没有同一测试集上的基线与微调模型结果','reports/; output/'),
+('W5.4',5,2,'提示词优化及准确率提升','部分完成','结构化提示词及安全解析存在；无可量化前后提升对照','src/week4_planner.py'),
+('W6.1',6,2,'复杂任务自动拆解与分步执行','部分完成','多步运行器和任务目录在模拟层验证，未完成真实模型长任务','src/week3_runtime.py; src/week3_task_catalog.py'),
+('W6.2',6,2,'错误检测与自动重试','部分完成','循环重试及上限有模拟测试；网页是手动恢复，不能视为真实桌面自动重试验收','src/week4_realtime.py; tests/test_week4_realtime.py'),
+('W6.3',6,2,'提升感知识别准确率与速度','缺失','缺少优化前后标注数据、准确率与耗时对比；单次OCR成功不能代替','reports/; output/'),
+('W6.4',6,2,'实时监控与日志','已完成','任务状态、HTTP信息、截图及JSONL日志已实现','src/local_bridge.py; gui-agent-console/dist/index.html'),
+('W7.1',7,3,'20个不同难度桌面任务测试集','缺失','5类任务目录、126项自动测试和15个浏览器场景都不是20个独立桌面任务','src/week3_task_catalog.py; output/week8/'),
+('W7.2',7,3,'成功率平均时间错误率量化','缺失','没有20任务实际运行结果及聚合统计；单次23.5778秒不是平均执行时间','output/week8/live_e2e/results.json'),
+('W7.3',7,3,'不同应用及分辨率性能差异','缺失','六种视口是网页布局测量，不是不同应用和物理分辨率下的任务性能对照','output/week8/browser_regression/results.json'),
+('W7.4',7,3,'与UI TARS和Claude技术差距对比','部分完成','有技术路线和局限讨论；缺少围绕本项目实验的系统性同口径对比','output/docx/第八周项目结项报告.docx'),
+('W8.1',8,3,'完整技术报告','已完成','26页论文式报告，正文10996个汉字；完整性结论须同时引用本核对清单','output/docx/第八周项目结项报告.docx'),
+('W8.2',8,3,'系统演示视频','缺失','项目目录及历史交付包未找到MP4 MOV或WebM演示文件，静态截图不能替代','output/'),
+('W8.3',8,3,'代码仓库注释与使用说明','部分完成','已补总README和最新源码归档；全项目无Git/GitHub仓库，只有前端Git仓库；脚本仍有本机绝对路径','README.md; gui-agent-console/.git; scripts/'),
+]
+
+
+def main():
+    OUT.mkdir(parents=True, exist_ok=True)
+    outline = json.loads((OUT/'original_outline.json').read_text())
+    sync = json.loads((OUT/'frontend_sync_status.json').read_text())
+    counts = dict(Counter(row[4] for row in ROWS))
+    record = {'checked_at':datetime.now(ZoneInfo('Asia/Hong_Kong')).isoformat(timespec='seconds'),
+              'original_pdf':{'path':outline['source_path'],'sha256':outline['sha256'],'page_count':5},
+              'overall_status':'incomplete_against_original_outline',
+              'counts':counts,'requirements':[dict(zip(['id','week','pdf_page','requirement','status','finding','evidence'],r)) for r in ROWS],
+              'frontend':sync,'scope_note':'Manual requirement audit, not additional test cases. Missing means no supporting artifact found in the current project and inspected historical packages.'}
+    (OUT/'requirements_audit.json').write_text(json.dumps(record,ensure_ascii=False,indent=2))
+    lines=['# 项目最终核对清单','',
+      '**结论：当前工程原型已通过所定义的验收，原始八周PDF大纲尚未全部完成。**',
+      '', '核对日期：2026年10月16日。原始依据为桌面上的《大模型 AI Agent 算法岗位线上实习项目大纲：基于多模态大模型的桌面 GUI 智能体开发与优化.pdf》，共5页，已逐页阅读并检查表格。原件SHA-256：'+outline['sha256']+'。',
+      '', '此前“第八周5/5步完成”仅指后来制定的工程收尾计划，不表示原PDF的31项执行任务全部完成；此前“无需Kaggle”也仅适用于当次工程验收。原大纲第五周明确要求LoRA训练，仍须GPU实验才能补齐。',
+      '', '## 一 前端同步核对','',
+      '核查时线上仍为版本2，源码提交6ae5a104652ed246fc44300ead4d90b32b7514ca；本地包含第六至第八周的状态、错误、窄屏、恢复与终态改动。',
+      '', '本次经用户明确授权后'+('已发布版本'+str(sync.get('live_version_number'))+'，部署状态succeeded。' if sync['deployment_status']=='succeeded' else '已准备发布包，生产部署尚未完成。'),
+      '', '当前站点：'+sync['url']+'。当前源码提交：'+sync['local_source_commit']+'。打包HTML与本地HTML的SHA-256相同，且与既有通过验收的前端文件一致。访问范围保持仅站点所有者，不改为公开。发布只同步前端，Python执行器仍须在同一电脑启动；没有把本地执行器部署到云端，也没有新做“线上页面访问本地执行器”的浏览器端到端验收。',
+      '', '## 二 原始要求逐项对照','',
+      '以下按原PDF细分任务统计，不按工具库或每周报告数量计算完成率。当前共31项：'+ '，'.join(f'{k}{v}项' for k,v in counts.items())+'。不据此生成完成百分比，因各项工作量不同。',
+      '', '| 编号 | PDF页 | 原始要求 | 状态 | 核对结果与证据 |','|---|---|---|---|---|']
+    for ident,week,page,req,status,finding,evidence in ROWS:
+        lines.append(f'| {ident} | {page} | {req} | {status} | {finding}。来源：{evidence} |')
+    lines += ['', '## 三 结项前的五组缺口','',
+      '1. **模型训练**：准备真实多模态训练与验证数据，运行PEFT LoRA，保存adapter、配置和训练日志，完成微调前后同口径对比。当前只有历史预处理摘要；Kaggle或Colab可承担GPU实验。',
+      '2. **真实任务覆盖**：补齐原PDF五类基础任务，以及模型驱动的多步执行、真实失败重试。文件打开、消息发送、应用关闭不能用模拟目录代替；实际发送消息需另行明确授权。',
+      '3. **系统评估**：定义20个独立且难度分层的桌面任务，记录真实完成情况、错误及耗时，统计成功率、平均时间、错误率；补跨应用和分辨率对照及图表。',
+      '4. **交付材料**：制作真实系统演示视频，完成全项目Git/GitHub版本管理，回传Kaggle全量数据产物，处理新机器运行所需的绝对路径。已补总README和最新源码材料包，但它们不替代完整仓库或缺失实验。',
+      '5. **边界与前端**：Windows/Linux缺真机测试；前端“任务记录、数据集、设置”为占位入口。发布现有控制台不代表这些功能已实现。',
+      '', '## 四 已有验收证据','',
+      '自动回归126/126通过；既有浏览器场景8项、专项7项及六种视口测量通过。实时成功任务4067068a4df6，规则驱动点击1次后由OCR和目标DOM共同确认VERIFIED，最终done，耗时23.5778秒。错误预期和重复目标场景分别正确失败或停止。',
+      '', '本次核对了9个交付清单文件的SHA-256均未改变，因此复用了当日的通过记录，没有为审计重复执行桌面动作。浏览器故障注入、真实桌面动作、模拟控制测试分别统计。线上发布成功由Sites版本与部署记录验证，不能替代云端浏览器交互实测。',
+      '', '本地data/week3/splits/statistics.json及旧代码包均为814条，训练732条、验证82条；reports/week3/kaggle_full_summary.txt记载3821条、3434/387划分。全量训练文件当前不在项目或检查过的旧包中，最终报告中的历史规模不能当成本地已交付规模。',
+      '', '## 五 文件与状态记录','',
+      '原PDF索引：output/week8/final_audit/original_outline.json；逐项矩阵：requirements_audit.json；前端版本和哈希：frontend_sync_status.json；源码材料包：output/项目源码与结项材料_20261016.zip。三份第八周Word报告按原样保留，属于此前工程阶段的交付；涉及当时“尚未发布云端”的表述由本清单中的当前部署状态更新。',
+      '', '**最终验收口径：可交付工程原型与研究总结，但不得写成原始八周大纲已全部完成。**']
+    p=ROOT/'reports/week8/项目最终核对清单.md';p.write_text('\n'.join(lines)+'\n')
+    print(json.dumps({'requirements':len(ROWS),'counts':counts,'overall':'incomplete','report':str(p)},ensure_ascii=False,indent=2))
+
+
+if __name__=='__main__': main()

@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "task": {
+    "id": "b6e39cf9ecad",
+    "task": "点击 VERIFY",
+    "mode": "preview",
+    "status": "preview_ready",
+    "step": 4,
+    "created_at": "2026-10-16T12:00:22",
+    "updated_at": "2026-10-16T12:00:30",
+    "logs": [
+      {
+        "time": "12:00:22",
+        "message": "任务已由本地执行器接收",
+        "status": "已接收"
+      },
+      {
+        "time": "12:00:22",
+        "message": "正在加载 OCR 并读取当前屏幕",
+        "status": "进行中"
+      },
+      {
+        "time": "12:00:30",
+        "message": "屏幕识别完成，共发现 26 个文字区域",
+        "status": "完成"
+      },
+      {
+        "time": "12:00:30",
+        "message": "已定位“VERIFY”，坐标 (737, 358)",
+        "status": "完成"
+      },
+      {
+        "time": "12:00:30",
+        "message": "动作方案已生成",
+        "status": "完成"
+      }
+    ],
+    "metrics": {
+      "ocr_items": 26,
+      "confidence": 99.8,
+      "safety": "通过"
+    },
+    "result": {
+      "task": "点击 VERIFY",
+      "mode": "preview",
+      "status": "preview_ready",
+      "cycle": 1,
+      "action_count": 0,
+      "history": [],
+      "proposed_action": {
+        "type": "click",
+        "x": 737,
+        "y": 358
+      },
+      "observation": {
+        "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/b6e39cf9ecad/realtime_20261016_120022_226168.png",
+        "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/b6e39cf9ecad/realtime_20261016_120022_226168.ocr.json",
+        "ocr_item_count": 26,
+        "low_confidence_item_count": 3
+      },
+      "duration_seconds": 7.9315
+    },
+    "error": null,
+    "screenshot_url": "/api/tasks/b6e39cf9ecad/screenshot"
+  }
+}

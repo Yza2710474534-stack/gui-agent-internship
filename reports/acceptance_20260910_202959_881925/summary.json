@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-10T20:29:59.882205",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.14",
+  "checks": {
+    "unit_tests": {
+      "passed": true,
+      "log": "unittest.txt",
+      "method": "构造图片和模拟接口；不发送鼠标键盘事件"
+    },
+    "live_capture": {
+      "passed": false,
+      "error": "未检测到可用屏幕，请在本地终端运行并检查屏幕录制权限"
+    }
+  },
+  "limitations": [
+    "Windows/Linux及不同物理显示器未实测",
+    "控制接口仅操作主屏幕；英文输入前需手动切换ABC",
+    "真实点击与拖选的历史记录应与模拟测试分开判断"
+  ]
+}

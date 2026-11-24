@@ -1,0 +1,17 @@
+{"time": "2026-09-19T00:03:24.036", "event": "task_started", "task": "打开浏览器并搜索 GUI Agent", "step_count": 6}
+{"time": "2026-09-19T00:03:24.036", "event": "step_started", "step_id": 1, "attempt": 1, "description": "确认浏览器入口"}
+{"time": "2026-09-19T00:03:24.036", "event": "step_finished", "step_id": 1, "attempt": 1, "success": true, "feedback": "模拟画面符合预期", "evidence": {"mode": "simulation", "step_id": 1, "attempt": 1}, "duration_seconds": 0.0002}
+{"time": "2026-09-19T00:03:24.036", "event": "step_started", "step_id": 2, "attempt": 1, "description": "打开浏览器"}
+{"time": "2026-09-19T00:03:24.036", "event": "step_finished", "step_id": 2, "attempt": 1, "success": true, "feedback": "模拟画面符合预期", "evidence": {"mode": "simulation", "step_id": 2, "attempt": 1}, "duration_seconds": 0.0001}
+{"time": "2026-09-19T00:03:24.036", "event": "step_started", "step_id": 3, "attempt": 1, "description": "定位地址栏"}
+{"time": "2026-09-19T00:03:24.036", "event": "step_finished", "step_id": 3, "attempt": 1, "success": false, "feedback": "模拟地址栏暂未出现", "evidence": {"mode": "simulation", "step_id": 3, "attempt": 1}, "duration_seconds": 0.0001}
+{"time": "2026-09-19T00:03:24.037", "event": "retry_scheduled", "step_id": 3, "next_attempt": 2, "reason": "模拟地址栏暂未出现"}
+{"time": "2026-09-19T00:03:24.037", "event": "step_started", "step_id": 3, "attempt": 2, "description": "定位地址栏"}
+{"time": "2026-09-19T00:03:24.037", "event": "step_finished", "step_id": 3, "attempt": 2, "success": true, "feedback": "模拟画面符合预期", "evidence": {"mode": "simulation", "step_id": 3, "attempt": 2}, "duration_seconds": 0.0001}
+{"time": "2026-09-19T00:03:24.037", "event": "step_started", "step_id": 4, "attempt": 1, "description": "输入 GUI Agent"}
+{"time": "2026-09-19T00:03:24.037", "event": "step_finished", "step_id": 4, "attempt": 1, "success": true, "feedback": "模拟画面符合预期", "evidence": {"mode": "simulation", "step_id": 4, "attempt": 1}, "duration_seconds": 0.0001}
+{"time": "2026-09-19T00:03:24.037", "event": "step_started", "step_id": 5, "attempt": 1, "description": "提交搜索"}
+{"time": "2026-09-19T00:03:24.037", "event": "step_finished", "step_id": 5, "attempt": 1, "success": true, "feedback": "模拟画面符合预期", "evidence": {"mode": "simulation", "step_id": 5, "attempt": 1}, "duration_seconds": 0.0001}
+{"time": "2026-09-19T00:03:24.037", "event": "step_started", "step_id": 6, "attempt": 1, "description": "检查搜索结果"}
+{"time": "2026-09-19T00:03:24.037", "event": "step_finished", "step_id": 6, "attempt": 1, "success": true, "feedback": "模拟画面符合预期", "evidence": {"mode": "simulation", "step_id": 6, "attempt": 1}, "duration_seconds": 0.0001}
+{"time": "2026-09-19T00:03:24.037", "event": "task_completed", "action_count": 7, "duration_seconds": 0.0017, "evidence": {"mode": "simulation"}}

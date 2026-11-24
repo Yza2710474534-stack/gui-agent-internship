@@ -1,0 +1,37 @@
+{
+  "test": "frontend_to_backend_preview_and_live_rejection",
+  "checked_at": "2026-09-29T18:46:16+08:00",
+  "frontend": {
+    "url": "http://127.0.0.1:8765/",
+    "form": "taskForm",
+    "task": "搜索 GUI Agent",
+    "success_mode": "preview",
+    "success_ui": "预览完成；动作方案已生成；识别文字 120 项；安全检查通过",
+    "rejection_mode": "live",
+    "rejection_ui": "本地执行器当前仅允许预览；实时点击需用 --enable-live 重新启动"
+  },
+  "backend": {
+    "success_post": {
+      "method": "POST",
+      "path": "/api/tasks",
+      "http_status": 202,
+      "task_id": "3f12e224b945"
+    },
+    "success_poll": {
+      "method": "GET",
+      "path": "/api/tasks/3f12e224b945",
+      "result_status": "preview_ready"
+    },
+    "rejection_post": {
+      "method": "POST",
+      "path": "/api/tasks",
+      "http_status": 403,
+      "reason": "live_disabled"
+    }
+  },
+  "result": "passed",
+  "mouse_keyboard_actions": 0,
+  "screenshot_probe": "/Users/ziang/Documents/ChatGPT/New project/output/week5/capture_probe/week5_probe_20260929_184739_814612.png",
+  "server_log_verified": true,
+  "browser_accessibility_state_verified": true
+}

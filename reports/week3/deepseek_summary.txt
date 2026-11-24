@@ -1,0 +1,11 @@
+DEEPSEEK API AGENT PLAN
+Provider: api
+Task: 打开浏览器并搜索 GUI Agent
+1. 点击任务栏或桌面上的浏览器图标，启动浏览器
+2. 等待浏览器主窗口打开并完成初始加载
+3. 点击浏览器地址栏或搜索框，使其获得焦点
+4. 输入搜索关键词 GUI Agent
+5. 按下 Enter 键或点击搜索按钮执行搜索
+6. 检查浏览器中是否已显示 GUI Agent 的搜索结果页面，并确认搜索框或页面内容包含该关键词
+Final status: done
+Completed steps: 6

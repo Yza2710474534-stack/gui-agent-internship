@@ -1,0 +1,22 @@
+{
+  "total_records": 814,
+  "valid_records": 814,
+  "invalid_records": 0,
+  "validation_percent_rule": 10,
+  "split_counts": {
+    "train": 732,
+    "validation": 82
+  },
+  "source_counts": {
+    "webarena": 812,
+    "screenagent": 1,
+    "mind2web": 1
+  },
+  "action_counts": {
+    "PLANACTION": 2,
+    "SELECT": 3,
+    "CLICK": 7,
+    "TYPE": 1
+  },
+  "errors": []
+}

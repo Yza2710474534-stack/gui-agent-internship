@@ -1,0 +1,30 @@
+{
+  "project_id": "appgprj_6ab5f698f07081919f0944edefe4f92e",
+  "url": "https://gui-agent-console-2026.remusswift194.chatgpt.site",
+  "live_version_number": 3,
+  "live_source_commit": "036045ed5bef9019a56685e5445252abd0956f06",
+  "local_source_commit": "036045ed5bef9019a56685e5445252abd0956f06",
+  "local_html_sha256": "00201361ae78f5011697f191db02e290440bb5dc4e585886d252ef99b0a4be99",
+  "archive_html_matches_local": true,
+  "archive": "output/week8/final_audit/frontend_release.tar.gz",
+  "archive_sha256": "03b71e8de3b9cb582c4ce325a6c6789fef54e3102c6fe162ad4027d59199ed22",
+  "access_mode": "custom",
+  "audience": "existing owner only; no access changes",
+  "deployment_status": "succeeded",
+  "block_reason": null,
+  "last_verified_delivery_hashes": {
+    "src/local_bridge.py": true,
+    "src/week8_verification.py": true,
+    "gui-agent-console/dist/index.html": true,
+    "output/docx/第八周周报.docx": true,
+    "output/docx/第八周验收测试报告.docx": true,
+    "output/docx/第八周项目结项报告.docx": true,
+    "output/week8/verification/regression_summary.json": true,
+    "output/week8/browser_regression/results.json": true,
+    "output/week8/live_e2e/results.json": true
+  },
+  "deployment_id": "appgdep_6ad1ead92100819180b1b5d7e47156d0",
+  "saved_version_id": "appgprj_6ab5f698f07081919f0944edefe4f92e~appgver_ec3aef1626b481918e61a6b6018d08aa",
+  "deployment_updated_at": "2026-10-16T09:14:14.301126+00:00",
+  "user_explicitly_authorized": true
+}

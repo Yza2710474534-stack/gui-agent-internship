@@ -1,0 +1,24 @@
+{
+  "task": "打开浏览器并搜索 GUI Agent",
+  "execution_mode": "live_browser_control_cua",
+  "status": "done",
+  "observed_at": "2026-09-29T18:54:22+08:00",
+  "browser": "Google Chrome",
+  "url": "https://www.google.com/search?q=GUI+Agent",
+  "window_title": "GUI Agent - Google 搜索",
+  "conditions": {
+    "search_box_equals_query": true,
+    "results_heading_exists": true,
+    "gui_agent_result_exists": true,
+    "multiple_results_visible": true
+  },
+  "evidence": {
+    "accessibility_state_check": "passed",
+    "visual_screenshot_check": "passed_via_cua",
+    "project_mss_capture": "/Users/ziang/Documents/ChatGPT/New project/output/week5/capture_probe/week5_probe_20260929_185433_602500.png",
+    "project_ocr": "/Users/ziang/Documents/ChatGPT/New project/output/ocr/ocr_20260929_185457_572028.json",
+    "completion_verification": "/Users/ziang/Documents/ChatGPT/New project/output/week5/live_browser/verification_20260929.json",
+    "project_mouse_keyboard_actions": 0,
+    "note": "浏览器导航和搜索由授权的 CUA 浏览器控制完成；项目 MSS、EasyOCR 和完成判断随后复核同一搜索结果画面。"
+  }
+}

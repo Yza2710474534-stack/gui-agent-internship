@@ -1,0 +1,51 @@
+{
+  "ok": true,
+  "task": {
+    "id": "f9aebaa8142f",
+    "task": "点击 VERIFY",
+    "mode": "live",
+    "status": "stopped",
+    "step": 4,
+    "created_at": "2026-10-16T12:00:12",
+    "updated_at": "2026-10-16T12:00:20",
+    "logs": [
+      {
+        "time": "12:00:12",
+        "message": "任务已由本地执行器接收",
+        "status": "已接收"
+      },
+      {
+        "time": "12:00:12",
+        "message": "正在加载 OCR 并读取当前屏幕",
+        "status": "进行中"
+      },
+      {
+        "time": "12:00:20",
+        "message": "屏幕识别完成，共发现 27 个文字区域",
+        "status": "完成"
+      },
+      {
+        "time": "12:00:20",
+        "message": "无法唯一定位“VERIFY”",
+        "status": "已停止"
+      }
+    ],
+    "metrics": {
+      "ocr_items": 27,
+      "confidence": null,
+      "safety": "检查中"
+    },
+    "result": {
+      "task": "点击 VERIFY",
+      "mode": "live",
+      "status": "stopped",
+      "cycle": 1,
+      "action_count": 0,
+      "history": [],
+      "stop_reason": "无法唯一定位“VERIFY”",
+      "duration_seconds": 7.681
+    },
+    "error": "无法唯一定位“VERIFY”",
+    "screenshot_url": "/api/tasks/f9aebaa8142f/screenshot"
+  }
+}

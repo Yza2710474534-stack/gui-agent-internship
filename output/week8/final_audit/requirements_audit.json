@@ -1,0 +1,326 @@
+{
+  "checked_at": "2026-10-16T17:15:57+08:00",
+  "original_pdf": {
+    "path": "/Users/ziang/Desktop/大模型 AI Agent 算法岗位线上实习项目大纲：基于多模态大模型的桌面 GUI 智能体开发与优化.pdf",
+    "sha256": "14f2adf802ba0dc9931496d53b566378627421d64290a61b524209e296fd01ad",
+    "page_count": 5
+  },
+  "overall_status": "incomplete_against_original_outline",
+  "counts": {
+    "已完成": 11,
+    "部分完成": 13,
+    "缺失": 7
+  },
+  "requirements": [
+    {
+      "id": "W1.1",
+      "week": 1,
+      "pdf_page": 1,
+      "requirement": "技术文章与背景调研",
+      "status": "已完成",
+      "finding": "第一周研究报告及阶段交付物；不将历史调研称为当前最新综述",
+      "evidence": "output/pdf/week1_gui_agent_research_report.pdf"
+    },
+    {
+      "id": "W1.2",
+      "week": 1,
+      "pdf_page": 1,
+      "requirement": "UI TARS Claude Computer Use ScreenAgent研究",
+      "status": "已完成",
+      "finding": "历史研究报告包含技术路线对照",
+      "evidence": "output/docx/第一周阶段交付物.docx"
+    },
+    {
+      "id": "W1.3",
+      "week": 1,
+      "pdf_page": 1,
+      "requirement": "核心架构和挑战分析",
+      "status": "已完成",
+      "finding": "感知规划执行反馈、坐标与长任务挑战已说明",
+      "evidence": "output/pdf/week1_gui_agent_research_report.pdf"
+    },
+    {
+      "id": "W1.4",
+      "week": 1,
+      "pdf_page": 1,
+      "requirement": "Python环境与基础工具验证",
+      "status": "已完成",
+      "finding": "macOS虚拟环境和依赖实测；CUDA为有GPU时的条件项",
+      "evidence": "reports/week2_environment.txt"
+    },
+    {
+      "id": "W2.1",
+      "week": 2,
+      "pdf_page": 1,
+      "requirement": "跨平台实时截图及多分辨率",
+      "status": "部分完成",
+      "finding": "macOS截图实测；其他尺寸多为构造数据，Windows/Linux无真机验收",
+      "evidence": "src/screen_capture.py; WEEK2_README.md"
+    },
+    {
+      "id": "W2.2",
+      "week": 2,
+      "pdf_page": 2,
+      "requirement": "OCR文字与UI元素识别",
+      "status": "已完成",
+      "finding": "真实EasyOCR与有限模板匹配已验证；不等于任意UI理解",
+      "evidence": "src/ocr_engine.py; src/element_locator.py"
+    },
+    {
+      "id": "W2.3",
+      "week": 2,
+      "pdf_page": 2,
+      "requirement": "点击输入滚动拖拽控制",
+      "status": "已完成",
+      "finding": "基础函数、模拟测试及历史Mac操作记录；中文输入受限",
+      "evidence": "src/controller.py; WEEK2_README.md"
+    },
+    {
+      "id": "W2.4",
+      "week": 2,
+      "pdf_page": 2,
+      "requirement": "坐标定位与边界框绘制",
+      "status": "已完成",
+      "finding": "坐标映射与绘框实现和测试已保存",
+      "evidence": "src/coordinate.py; src/visualizer.py"
+    },
+    {
+      "id": "W3.1",
+      "week": 3,
+      "pdf_page": 2,
+      "requirement": "公开GUI数据下载与预处理",
+      "status": "部分完成",
+      "finding": "有脚本及3821条Kaggle历史摘要；本地仅814条及732/82划分，全量产物未回传",
+      "evidence": "scripts/week3_kaggle_full_preprocess.py; reports/week3/kaggle_full_summary.txt; data/week3/splits/statistics.json"
+    },
+    {
+      "id": "W3.2",
+      "week": 3,
+      "pdf_page": 2,
+      "requirement": "基础多模态Agent框架",
+      "status": "部分完成",
+      "finding": "LangChain管线和图片调用接口存在；未验证实际多模态模型驱动的桌面任务",
+      "evidence": "src/week3_agent.py; src/week3_model.py"
+    },
+    {
+      "id": "W3.3",
+      "week": 3,
+      "pdf_page": 2,
+      "requirement": "简单任务拆解与规划",
+      "status": "已完成",
+      "finding": "mock及历史DeepSeek文字规划已记录；与真实自动执行区分",
+      "evidence": "reports/week3/deepseek_summary.txt"
+    },
+    {
+      "id": "W3.4",
+      "week": 3,
+      "pdf_page": 2,
+      "requirement": "开源多模态模型本地部署及API",
+      "status": "部分完成",
+      "finding": "API/Ollama及图片编码接口存在；没有本地VLM部署和真实视觉API验收证据",
+      "evidence": "src/week3_model.py; WEEK3_README.md"
+    },
+    {
+      "id": "W4.1",
+      "week": 4,
+      "pdf_page": 2,
+      "requirement": "感知控制Agent无缝集成",
+      "status": "部分完成",
+      "finding": "规则驱动单步真实闭环已通过；模型规划未接入网页实时成功路径",
+      "evidence": "src/local_bridge.py; output/week8/live_e2e/results.json"
+    },
+    {
+      "id": "W4.2",
+      "week": 4,
+      "pdf_page": 2,
+      "requirement": "指令到反馈完整闭环",
+      "status": "部分完成",
+      "finding": "一次真实点击从前端到反馈完成；不代表通用多步或五类任务完成",
+      "evidence": "output/week8/live_e2e/results.json"
+    },
+    {
+      "id": "W4.3",
+      "week": 4,
+      "pdf_page": 2,
+      "requirement": "命令行交互界面",
+      "status": "已完成",
+      "finding": "基础Agent和实时演示均有CLI入口",
+      "evidence": "src/week3_agent.py; scripts/run_week4_realtime_demo.py"
+    },
+    {
+      "id": "W4.4",
+      "week": 4,
+      "pdf_page": 2,
+      "requirement": "五类基础桌面任务真实调试",
+      "status": "部分完成",
+      "finding": "有搜索及单步操作；文件打开、消息发送和应用关闭缺完整实测；草稿不能替代发送",
+      "evidence": "src/week3_task_catalog.py; WEEK3_README.md"
+    },
+    {
+      "id": "W5.1",
+      "week": 5,
+      "pdf_page": 2,
+      "requirement": "构建微调训练及验证集",
+      "status": "部分完成",
+      "finding": "存在轨迹划分；未形成经真实VLM训练验证的截图动作训练数据及全量本地产物",
+      "evidence": "data/week3/splits/statistics.json; scripts/week3_kaggle_full_preprocess.py"
+    },
+    {
+      "id": "W5.2",
+      "week": 5,
+      "pdf_page": 2,
+      "requirement": "PEFT多模态模型LoRA微调",
+      "status": "缺失",
+      "finding": "未找到训练脚本、训练日志或LoRA adapter权重；EasyOCR权重不是本项目微调结果",
+      "evidence": "src/; scripts/; artifacts/easyocr/models/"
+    },
+    {
+      "id": "W5.3",
+      "week": 5,
+      "pdf_page": 2,
+      "requirement": "微调前后效果对比",
+      "status": "缺失",
+      "finding": "没有同一测试集上的基线与微调模型结果",
+      "evidence": "reports/; output/"
+    },
+    {
+      "id": "W5.4",
+      "week": 5,
+      "pdf_page": 2,
+      "requirement": "提示词优化及准确率提升",
+      "status": "部分完成",
+      "finding": "结构化提示词及安全解析存在；无可量化前后提升对照",
+      "evidence": "src/week4_planner.py"
+    },
+    {
+      "id": "W6.1",
+      "week": 6,
+      "pdf_page": 2,
+      "requirement": "复杂任务自动拆解与分步执行",
+      "status": "部分完成",
+      "finding": "多步运行器和任务目录在模拟层验证，未完成真实模型长任务",
+      "evidence": "src/week3_runtime.py; src/week3_task_catalog.py"
+    },
+    {
+      "id": "W6.2",
+      "week": 6,
+      "pdf_page": 2,
+      "requirement": "错误检测与自动重试",
+      "status": "部分完成",
+      "finding": "循环重试及上限有模拟测试；网页是手动恢复，不能视为真实桌面自动重试验收",
+      "evidence": "src/week4_realtime.py; tests/test_week4_realtime.py"
+    },
+    {
+      "id": "W6.3",
+      "week": 6,
+      "pdf_page": 2,
+      "requirement": "提升感知识别准确率与速度",
+      "status": "缺失",
+      "finding": "缺少优化前后标注数据、准确率与耗时对比；单次OCR成功不能代替",
+      "evidence": "reports/; output/"
+    },
+    {
+      "id": "W6.4",
+      "week": 6,
+      "pdf_page": 2,
+      "requirement": "实时监控与日志",
+      "status": "已完成",
+      "finding": "任务状态、HTTP信息、截图及JSONL日志已实现",
+      "evidence": "src/local_bridge.py; gui-agent-console/dist/index.html"
+    },
+    {
+      "id": "W7.1",
+      "week": 7,
+      "pdf_page": 3,
+      "requirement": "20个不同难度桌面任务测试集",
+      "status": "缺失",
+      "finding": "5类任务目录、126项自动测试和15个浏览器场景都不是20个独立桌面任务",
+      "evidence": "src/week3_task_catalog.py; output/week8/"
+    },
+    {
+      "id": "W7.2",
+      "week": 7,
+      "pdf_page": 3,
+      "requirement": "成功率平均时间错误率量化",
+      "status": "缺失",
+      "finding": "没有20任务实际运行结果及聚合统计；单次23.5778秒不是平均执行时间",
+      "evidence": "output/week8/live_e2e/results.json"
+    },
+    {
+      "id": "W7.3",
+      "week": 7,
+      "pdf_page": 3,
+      "requirement": "不同应用及分辨率性能差异",
+      "status": "缺失",
+      "finding": "六种视口是网页布局测量，不是不同应用和物理分辨率下的任务性能对照",
+      "evidence": "output/week8/browser_regression/results.json"
+    },
+    {
+      "id": "W7.4",
+      "week": 7,
+      "pdf_page": 3,
+      "requirement": "与UI TARS和Claude技术差距对比",
+      "status": "部分完成",
+      "finding": "有技术路线和局限讨论；缺少围绕本项目实验的系统性同口径对比",
+      "evidence": "output/docx/第八周项目结项报告.docx"
+    },
+    {
+      "id": "W8.1",
+      "week": 8,
+      "pdf_page": 3,
+      "requirement": "完整技术报告",
+      "status": "已完成",
+      "finding": "26页论文式报告，正文10996个汉字；完整性结论须同时引用本核对清单",
+      "evidence": "output/docx/第八周项目结项报告.docx"
+    },
+    {
+      "id": "W8.2",
+      "week": 8,
+      "pdf_page": 3,
+      "requirement": "系统演示视频",
+      "status": "缺失",
+      "finding": "项目目录及历史交付包未找到MP4 MOV或WebM演示文件，静态截图不能替代",
+      "evidence": "output/"
+    },
+    {
+      "id": "W8.3",
+      "week": 8,
+      "pdf_page": 3,
+      "requirement": "代码仓库注释与使用说明",
+      "status": "部分完成",
+      "finding": "已补总README和最新源码归档；全项目无Git/GitHub仓库，只有前端Git仓库；脚本仍有本机绝对路径",
+      "evidence": "README.md; gui-agent-console/.git; scripts/"
+    }
+  ],
+  "frontend": {
+    "project_id": "appgprj_6ab5f698f07081919f0944edefe4f92e",
+    "url": "https://gui-agent-console-2026.remusswift194.chatgpt.site",
+    "live_version_number": 3,
+    "live_source_commit": "036045ed5bef9019a56685e5445252abd0956f06",
+    "local_source_commit": "036045ed5bef9019a56685e5445252abd0956f06",
+    "local_html_sha256": "00201361ae78f5011697f191db02e290440bb5dc4e585886d252ef99b0a4be99",
+    "archive_html_matches_local": true,
+    "archive": "output/week8/final_audit/frontend_release.tar.gz",
+    "archive_sha256": "03b71e8de3b9cb582c4ce325a6c6789fef54e3102c6fe162ad4027d59199ed22",
+    "access_mode": "custom",
+    "audience": "existing owner only; no access changes",
+    "deployment_status": "succeeded",
+    "block_reason": null,
+    "last_verified_delivery_hashes": {
+      "src/local_bridge.py": true,
+      "src/week8_verification.py": true,
+      "gui-agent-console/dist/index.html": true,
+      "output/docx/第八周周报.docx": true,
+      "output/docx/第八周验收测试报告.docx": true,
+      "output/docx/第八周项目结项报告.docx": true,
+      "output/week8/verification/regression_summary.json": true,
+      "output/week8/browser_regression/results.json": true,
+      "output/week8/live_e2e/results.json": true
+    },
+    "deployment_id": "appgdep_6ad1ead92100819180b1b5d7e47156d0",
+    "saved_version_id": "appgprj_6ab5f698f07081919f0944edefe4f92e~appgver_ec3aef1626b481918e61a6b6018d08aa",
+    "deployment_updated_at": "2026-10-16T09:14:14.301126+00:00",
+    "user_explicitly_authorized": true
+  },
+  "scope_note": "Manual requirement audit, not additional test cases. Missing means no supporting artifact found in the current project and inspected historical packages."
+}

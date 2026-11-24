@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-16T12:04:57+08:00",
+  "tests_run": 126,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "module_counts": {
+    "test_demo": 4,
+    "test_local_bridge": 5,
+    "test_modules": 33,
+    "test_week3_agent": 9,
+    "test_week3_batch": 5,
+    "test_week3_dataset": 11,
+    "test_week3_model": 9,
+    "test_week3_runtime": 10,
+    "test_week3_task_catalog": 5,
+    "test_week3_trajectory_demo": 5,
+    "test_week4_observation": 3,
+    "test_week4_planner": 5,
+    "test_week4_realtime": 10,
+    "test_week4_search": 4,
+    "test_week5_capture_probe": 2,
+    "test_week8_verification": 6
+  },
+  "log": "output/week8/verification/regression.log",
+  "scope": "自动回归；真实实时闭环另见 output/week8/live_e2e/results.json"
+}

@@ -1,0 +1,4327 @@
+{
+  "checked_at": "2026-10-16T04:04:50.200Z",
+  "cases": [
+    {
+      "id": "real_live_click_success",
+      "result": "passed",
+      "elapsed_seconds": 26.335,
+      "input": "点击 VERIFY，确认出现 VERIFIED",
+      "task_id": "4067068a4df6",
+      "backend_status": "done",
+      "action_count": 1,
+      "target_dom": "VERIFIED",
+      "target_click_count": 1,
+      "expected_ocr": "VERIFIED",
+      "completion_check": {
+        "success": true,
+        "message": "已确认出现“VERIFIED”",
+        "evidence": {
+          "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120510_627332.png",
+          "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120510_627332.ocr.json",
+          "expected_text": "VERIFIED",
+          "matched_text": [
+            "VERIFIED"
+          ]
+        }
+      },
+      "duration_seconds": 23.5778
+    },
+    {
+      "id": "completion_text_missing",
+      "result": "passed",
+      "elapsed_seconds": 17.421,
+      "task_id": "c6b5df173cd7",
+      "backend_status": "action_failed",
+      "action_count": 1,
+      "error": "未观察到预期文字“MISSING”"
+    },
+    {
+      "id": "ambiguous_target_no_action",
+      "result": "passed",
+      "elapsed_seconds": 9.06,
+      "task_id": "a2b2b785b99b",
+      "backend_status": "stopped",
+      "action_count": 0,
+      "error": "无法唯一定位“VERIFY”"
+    },
+    {
+      "id": "active_task_poll_timeout_and_recovery",
+      "result": "passed",
+      "elapsed_seconds": 9.26,
+      "task_id": "5efd2fe36dfd",
+      "injection": "browser GET delayed past 5000 ms; real backend still processes",
+      "injected_requests": 1,
+      "recovered_same_task": true,
+      "status": "preview_ready"
+    },
+    {
+      "id": "screenshot_unavailable_and_manual_recovery",
+      "result": "passed",
+      "elapsed_seconds": 0.13,
+      "task_id": "5efd2fe36dfd",
+      "injection": "browser screenshot HTTP 404 until fault removed",
+      "status": "image recovered"
+    },
+    {
+      "id": "active_poll_disconnect_and_recovery",
+      "result": "passed",
+      "elapsed_seconds": 8.246,
+      "task_id": "a35150b6e2ed",
+      "injection": "browser task-poll connection refused; backend kept alive",
+      "recovered_same_task": true,
+      "status": "preview_ready"
+    },
+    {
+      "id": "mobile_320_long_task",
+      "result": "passed",
+      "elapsed_seconds": 8.267,
+      "task_id": "b6d558b1d179",
+      "input_length": 220,
+      "viewport": 320,
+      "content": 320
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "service": "GUI Agent Local Executor",
+        "version": "1.0",
+        "live_enabled": true
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "input": "{\"task\":\"点击 VERIFY，确认出现 VERIFIED\",\"mode\":\"live\"}",
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:52",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:52",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:52",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:53",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:04:54",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:02",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:10",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "4067068a4df6",
+          "task": "点击 VERIFY，确认出现 VERIFIED",
+          "mode": "live",
+          "status": "done",
+          "step": 4,
+          "created_at": "2026-10-16T12:04:52",
+          "updated_at": "2026-10-16T12:05:18",
+          "logs": [
+            {
+              "time": "12:04:53",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:04:53",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:02",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:18",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:18",
+              "message": "任务执行完成",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": {
+            "task": "点击 VERIFY，确认出现 VERIFIED",
+            "mode": "live",
+            "status": "done",
+            "cycle": 2,
+            "action_count": 1,
+            "history": [
+              {
+                "cycle": 1,
+                "action": {
+                  "type": "click",
+                  "x": 737,
+                  "y": 358
+                },
+                "attempt": 1,
+                "action_attempt": 1,
+                "success": true,
+                "feedback": "已确认出现“VERIFIED”",
+                "evidence": {
+                  "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120502_701920.png",
+                  "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120502_701920.ocr.json",
+                  "expected_text": "VERIFIED",
+                  "matched_text": [
+                    "VERIFIED"
+                  ]
+                }
+              }
+            ],
+            "completion_check": {
+              "success": true,
+              "message": "已确认出现“VERIFIED”",
+              "evidence": {
+                "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120510_627332.png",
+                "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120510_627332.ocr.json",
+                "expected_text": "VERIFIED",
+                "matched_text": [
+                  "VERIFIED"
+                ]
+              }
+            },
+            "duration_seconds": 23.5778
+          },
+          "error": null,
+          "screenshot_url": "/api/tasks/4067068a4df6/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/4067068a4df6/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "input": "{\"task\":\"点击 VERIFY，确认出现 MISSING\",\"mode\":\"live\"}",
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:19",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:27",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "c6b5df173cd7",
+          "task": "点击 VERIFY，确认出现 MISSING",
+          "mode": "live",
+          "status": "action_failed",
+          "step": 4,
+          "created_at": "2026-10-16T12:05:19",
+          "updated_at": "2026-10-16T12:05:35",
+          "logs": [
+            {
+              "time": "12:05:19",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:19",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:27",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:27",
+              "message": "已执行安全动作：click",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:35",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:35",
+              "message": "未观察到预期文字“MISSING”",
+              "status": "失败"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": {
+            "task": "点击 VERIFY，确认出现 MISSING",
+            "mode": "live",
+            "status": "action_failed",
+            "cycle": 1,
+            "action_count": 1,
+            "history": [
+              {
+                "cycle": 1,
+                "action": {
+                  "type": "click",
+                  "x": 737,
+                  "y": 358
+                },
+                "attempt": 1,
+                "action_attempt": 1,
+                "success": false,
+                "feedback": "未观察到预期文字“MISSING”",
+                "evidence": {
+                  "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/c6b5df173cd7/realtime_20261016_120527_583534.png",
+                  "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/c6b5df173cd7/realtime_20261016_120527_583534.ocr.json",
+                  "expected_text": "MISSING",
+                  "matched_text": []
+                }
+              }
+            ],
+            "failure_reason": "未观察到预期文字“MISSING”",
+            "duration_seconds": 15.6399
+          },
+          "error": "未观察到预期文字“MISSING”",
+          "screenshot_url": "/api/tasks/c6b5df173cd7/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/c6b5df173cd7/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "input": "{\"task\":\"点击 VERIFY\",\"mode\":\"live\"}",
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:36",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a2b2b785b99b",
+          "task": "点击 VERIFY",
+          "mode": "live",
+          "status": "stopped",
+          "step": 4,
+          "created_at": "2026-10-16T12:05:36",
+          "updated_at": "2026-10-16T12:05:44",
+          "logs": [
+            {
+              "time": "12:05:36",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:36",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:44",
+              "message": "屏幕识别完成，共发现 26 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:44",
+              "message": "无法唯一定位“VERIFY”",
+              "status": "已停止"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 26,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": {
+            "task": "点击 VERIFY",
+            "mode": "live",
+            "status": "stopped",
+            "cycle": 1,
+            "action_count": 0,
+            "history": [],
+            "stop_reason": "无法唯一定位“VERIFY”",
+            "duration_seconds": 7.6289
+          },
+          "error": "无法唯一定位“VERIFY”",
+          "screenshot_url": "/api/tasks/a2b2b785b99b/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a2b2b785b99b/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "input": "{\"task\":\"点击 VERIFY\",\"mode\":\"preview\"}",
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "5efd2fe36dfd",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:05:46",
+          "updated_at": "2026-10-16T12:05:46",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "5efd2fe36dfd",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:46",
+          "updated_at": "2026-10-16T12:05:46",
+          "logs": [
+            {
+              "time": "12:05:46",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:46",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "5efd2fe36dfd",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:46",
+          "updated_at": "2026-10-16T12:05:46",
+          "logs": [
+            {
+              "time": "12:05:46",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:46",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "5efd2fe36dfd",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:46",
+          "updated_at": "2026-10-16T12:05:46",
+          "logs": [
+            {
+              "time": "12:05:46",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:46",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "5efd2fe36dfd",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "preview_ready",
+          "step": 4,
+          "created_at": "2026-10-16T12:05:46",
+          "updated_at": "2026-10-16T12:05:53",
+          "logs": [
+            {
+              "time": "12:05:46",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:46",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:05:53",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:53",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:05:53",
+              "message": "动作方案已生成",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": {
+            "task": "点击 VERIFY",
+            "mode": "preview",
+            "status": "preview_ready",
+            "cycle": 1,
+            "action_count": 0,
+            "history": [],
+            "proposed_action": {
+              "type": "click",
+              "x": 737,
+              "y": 358
+            },
+            "observation": {
+              "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/5efd2fe36dfd/realtime_20261016_120546_145064.png",
+              "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/5efd2fe36dfd/realtime_20261016_120546_145064.ocr.json",
+              "ocr_item_count": 25,
+              "low_confidence_item_count": 2
+            },
+            "duration_seconds": 7.5435
+          },
+          "error": null,
+          "screenshot_url": "/api/tasks/5efd2fe36dfd/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd/screenshot",
+      "status": 404,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd/screenshot",
+      "status": 404,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5efd2fe36dfd/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "input": "{\"task\":\"点击 VERIFY\",\"mode\":\"preview\"}",
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:05:54",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "a35150b6e2ed",
+          "task": "点击 VERIFY",
+          "mode": "preview",
+          "status": "preview_ready",
+          "step": 4,
+          "created_at": "2026-10-16T12:05:54",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:05:54",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:05:54",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:06:02",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:06:02",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:06:02",
+              "message": "动作方案已生成",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": {
+            "task": "点击 VERIFY",
+            "mode": "preview",
+            "status": "preview_ready",
+            "cycle": 1,
+            "action_count": 0,
+            "history": [],
+            "proposed_action": {
+              "type": "click",
+              "x": 737,
+              "y": 358
+            },
+            "observation": {
+              "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/a35150b6e2ed/realtime_20261016_120554_490212.png",
+              "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/a35150b6e2ed/realtime_20261016_120554_490212.ocr.json",
+              "ocr_item_count": 25,
+              "low_confidence_item_count": 2
+            },
+            "duration_seconds": 7.6922
+          },
+          "error": null,
+          "screenshot_url": "/api/tasks/a35150b6e2ed/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/a35150b6e2ed/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "service": "GUI Agent Local Executor",
+        "version": "1.0",
+        "live_enabled": true
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 202,
+      "input": "{\"task\":\"点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证\",\"mode\":\"preview\"}",
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "queued",
+          "step": 0,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "observing",
+          "step": 2,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:02",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            }
+          ],
+          "metrics": {
+            "ocr_items": null,
+            "confidence": null,
+            "safety": "检查中"
+          },
+          "result": null,
+          "error": null,
+          "screenshot_url": null
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179",
+      "status": 200,
+      "input": null,
+      "body": {
+        "ok": true,
+        "task": {
+          "id": "b6d558b1d179",
+          "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+          "mode": "preview",
+          "status": "preview_ready",
+          "step": 4,
+          "created_at": "2026-10-16T12:06:02",
+          "updated_at": "2026-10-16T12:06:10",
+          "logs": [
+            {
+              "time": "12:06:02",
+              "message": "任务已由本地执行器接收",
+              "status": "已接收"
+            },
+            {
+              "time": "12:06:02",
+              "message": "正在加载 OCR 并读取当前屏幕",
+              "status": "进行中"
+            },
+            {
+              "time": "12:06:10",
+              "message": "屏幕识别完成，共发现 25 个文字区域",
+              "status": "完成"
+            },
+            {
+              "time": "12:06:10",
+              "message": "已定位“VERIFY”，坐标 (737, 358)",
+              "status": "完成"
+            },
+            {
+              "time": "12:06:10",
+              "message": "动作方案已生成",
+              "status": "完成"
+            }
+          ],
+          "metrics": {
+            "ocr_items": 25,
+            "confidence": 99.8,
+            "safety": "通过"
+          },
+          "result": {
+            "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+            "mode": "preview",
+            "status": "preview_ready",
+            "cycle": 1,
+            "action_count": 0,
+            "history": [],
+            "proposed_action": {
+              "type": "click",
+              "x": 737,
+              "y": 358
+            },
+            "observation": {
+              "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/b6d558b1d179/realtime_20261016_120602_733104.png",
+              "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/b6d558b1d179/realtime_20261016_120602_733104.ocr.json",
+              "ocr_item_count": 25,
+              "low_confidence_item_count": 2
+            },
+            "duration_seconds": 7.4338
+          },
+          "error": null,
+          "screenshot_url": "/api/tasks/b6d558b1d179/screenshot"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/b6d558b1d179/screenshot",
+      "status": 200,
+      "input": null,
+      "body": "[PNG image]"
+    }
+  ],
+  "execution": "Real MSS, EasyOCR, PyAutoGUI and local HTTP; deterministic local test page",
+  "browser": "Headless console plus visible Chrome target; no mocked executor or target click",
+  "result": "passed"
+}

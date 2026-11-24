@@ -1,0 +1,9 @@
+{"time": "2026-09-22T19:18:36.947", "event": "loop_started", "task": "打开浏览器并搜索 GUI Agent", "mode": "preview", "max_cycles": 20, "max_actions": 10}
+{"time": "2026-09-22T19:18:36.948", "event": "observation_ready", "cycle": 1, "observation": {"image_path": "offline/screen.png", "ocr_path": "offline/ocr.json", "cycle": 1}}
+{"time": "2026-09-22T19:18:36.948", "event": "action_proposed", "cycle": 1, "action": {"type": "click", "x": 400, "y": 65}}
+{"time": "2026-09-22T19:20:00.482", "event": "loop_started", "task": "打开浏览器并搜索 GUI Agent", "mode": "preview", "max_cycles": 20, "max_actions": 10}
+{"time": "2026-09-22T19:20:00.483", "event": "observation_ready", "cycle": 1, "observation": {"image_path": "offline/screen.png", "ocr_path": "offline/ocr.json", "cycle": 1}}
+{"time": "2026-09-22T19:20:00.483", "event": "action_proposed", "cycle": 1, "action": {"type": "click", "x": 400, "y": 65}}
+{"time": "2026-09-22T19:20:12.597", "event": "loop_started", "task": "打开浏览器并搜索 GUI Agent", "mode": "preview", "max_cycles": 20, "max_actions": 10}
+{"time": "2026-09-22T19:20:12.597", "event": "observation_ready", "cycle": 1, "observation": {"image_path": "offline/screen.png", "ocr_path": "offline/ocr.json", "cycle": 1}}
+{"time": "2026-09-22T19:20:12.598", "event": "action_proposed", "cycle": 1, "action": {"type": "click", "x": 400, "y": 65}}

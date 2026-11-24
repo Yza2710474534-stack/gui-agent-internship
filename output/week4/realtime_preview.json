@@ -1,0 +1,19 @@
+{
+  "task": "打开浏览器并搜索 GUI Agent",
+  "mode": "preview",
+  "status": "preview_ready",
+  "cycle": 1,
+  "action_count": 0,
+  "history": [],
+  "proposed_action": {
+    "type": "click",
+    "x": 400,
+    "y": 65
+  },
+  "observation": {
+    "image_path": "offline/screen.png",
+    "ocr_path": "offline/ocr.json",
+    "cycle": 1
+  },
+  "duration_seconds": 0.0004
+}

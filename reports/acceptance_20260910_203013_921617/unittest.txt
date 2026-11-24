@@ -1,0 +1,42 @@
+test_click_guard (test_demo.DemoTests.test_click_guard) ... ok
+test_feedback_requires_new_labels_and_image_change (test_demo.DemoTests.test_feedback_requires_new_labels_and_image_change) ... ok
+test_missing_or_ambiguous_target_never_proposes_click (test_demo.DemoTests.test_missing_or_ambiguous_target_never_proposes_click) ... ok
+test_scale_and_offset (test_demo.DemoTests.test_scale_and_offset) ... ok
+test_bad_output_size (test_modules.CaptureTests.test_bad_output_size) ... ok
+test_capture_backend_converts_bgra (test_modules.CaptureTests.test_capture_backend_converts_bgra) ... ok
+test_default_monitor_is_real_screen (test_modules.CaptureTests.test_default_monitor_is_real_screen) ... ok
+test_explicit_monitor_and_invalid_monitor (test_modules.CaptureTests.test_explicit_monitor_and_invalid_monitor) ... ok
+test_invalid_sequence_stops_before_capture (test_modules.CaptureTests.test_invalid_sequence_stops_before_capture) ... ok
+test_no_screen_is_reported (test_modules.CaptureTests.test_no_screen_is_reported) ... ok
+test_outside_region_never_grabs (test_modules.CaptureTests.test_outside_region_never_grabs) ... ok
+test_resized_frame_keeps_offset_and_scale (test_modules.CaptureTests.test_resized_frame_keeps_offset_and_scale) ... ok
+test_save_failure_is_reported (test_modules.CaptureTests.test_save_failure_is_reported) ... ok
+test_sequence_saves_three_images_and_metadata (test_modules.CaptureTests.test_sequence_saves_three_images_and_metadata) ... ok
+test_bad_position_never_clicks (test_modules.ControllerTests.test_bad_position_never_clicks) ... ok
+test_bad_scroll_and_duration (test_modules.ControllerTests.test_bad_scroll_and_duration) ... ok
+test_english_input (test_modules.ControllerTests.test_english_input) ... ok
+test_mac_drag_posts_full_sequence (test_modules.ControllerTests.test_mac_drag_posts_full_sequence) ... ok
+test_mac_drag_releases_on_interruption (test_modules.ControllerTests.test_mac_drag_releases_on_interruption) ... ok
+test_move_and_click (test_modules.ControllerTests.test_move_and_click) ... ok
+test_nonmac_drag_normal (test_modules.ControllerTests.test_nonmac_drag_normal) ... ok
+test_nonmac_drag_releases_on_failure (test_modules.ControllerTests.test_nonmac_drag_releases_on_failure) ... ok
+test_scroll_both_directions (test_modules.ControllerTests.test_scroll_both_directions) ... ok
+test_unsupported_text_never_types (test_modules.ControllerTests.test_unsupported_text_never_types) ... ok
+test_invalid_coordinates_and_dimensions (test_modules.CoordinateTests.test_invalid_coordinates_and_dimensions) ... ok
+test_negative_screen_offset (test_modules.CoordinateTests.test_negative_screen_offset) ... ok
+test_various_resolutions_and_retina_simulation (test_modules.CoordinateTests.test_various_resolutions_and_retina_simulation) ... ok
+test_absent_icon_returns_none (test_modules.ElementTests.test_absent_icon_returns_none) ... ok
+test_bad_box_and_missing_target (test_modules.ElementTests.test_bad_box_and_missing_target) ... ok
+test_flat_template_is_rejected (test_modules.ElementTests.test_flat_template_is_rejected) ... ok
+test_icon_location (test_modules.ElementTests.test_icon_location) ... ok
+test_scaled_icon (test_modules.ElementTests.test_scaled_icon) ... ok
+test_visualization_draws_without_changing_original (test_modules.ElementTests.test_visualization_draws_without_changing_original) ... ok
+test_bad_confidence_and_scale (test_modules.OCRTests.test_bad_confidence_and_scale) ... ok
+test_low_confidence_is_separated (test_modules.OCRTests.test_low_confidence_is_separated) ... ok
+test_missing_image (test_modules.OCRTests.test_missing_image) ... ok
+test_ocr_coordinates_restore_to_input_image (test_modules.OCRTests.test_ocr_coordinates_restore_to_input_image) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.008s
+
+OK

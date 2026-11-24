@@ -1,0 +1,13 @@
+WEEK 3 KAGGLE FULL PREPROCESS
+Run date: 2026-09-16
+Mind2Web limit: 0 (full train split)
+Total records: 3821
+Valid records: 3821
+Invalid records: 0
+Train records: 3434
+Validation records: 387
+WebArena: 812
+ScreenAgent: 2000
+Mind2Web: 1009
+Notebook version: Week 3 full preprocessing - 3821 valid
+Final status: FINAL_VALIDATION_OK

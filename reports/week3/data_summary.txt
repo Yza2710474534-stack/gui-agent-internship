@@ -1,0 +1,7 @@
+WEEK 3 DATA PIPELINE
+Total records: 814
+Valid records: 814
+Invalid records: 0
+Train records: 732
+Validation records: 82
+Source counts: {'webarena': 812, 'screenagent': 1, 'mind2web': 1}

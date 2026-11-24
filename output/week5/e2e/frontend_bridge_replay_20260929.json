@@ -1,0 +1,24 @@
+{
+  "test": "frontend_to_backend_preview_replay_for_report_screenshot",
+  "checked_at": "2026-09-29T18:56:48+08:00",
+  "frontend": {
+    "url": "http://127.0.0.1:8765/",
+    "task": "搜索 GUI Agent",
+    "mode": "preview",
+    "ui_status": "预览完成，没有执行鼠标或键盘",
+    "ui_metrics": {
+      "ocr_items": 68,
+      "safety": "通过"
+    },
+    "screenshot": "/Users/ziang/Documents/ChatGPT/New project/output/week5/capture_probe/week5_probe_20260929_185729_902162.png"
+  },
+  "backend": {
+    "task_id": "f0c2550e9504",
+    "post": "/api/tasks",
+    "poll": "/api/tasks/f0c2550e9504",
+    "result_status": "preview_ready",
+    "event_log": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/f0c2550e9504/events.jsonl"
+  },
+  "result": "passed",
+  "mouse_keyboard_actions": 0
+}

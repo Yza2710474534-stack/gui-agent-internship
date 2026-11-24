@@ -1,0 +1,19 @@
+第三周补充集成测试
+====================
+
+运行命令：
+./.venv/bin/python -m unittest -v tests.test_week3_runtime
+
+结果：运行时与五类任务目录测试通过
+状态：OK
+
+新增补充测试：15 项，通过 15 项，失败 0 项
+第三周测试合计：54 项，通过 54 项，失败 0 项
+项目全量测试合计：91 项，通过 91 项，失败 0 项
+
+任务类型：浏览器搜索、打开文件、文本编辑、消息草稿、应用关闭
+
+真实证据：
+- Chrome 搜索截图：output/screenshots/screen_1_20260919_171319_864597.png
+- OCR：output/ocr/ocr_20260919_171420_361782.json
+- 自动完成判断：output/week3/live_browser/20260919_000917/local_ocr_verification.json

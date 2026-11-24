@@ -1,0 +1,12 @@
+{
+  "revised_at": "2026-10-21",
+  "report": "output/docx/结项报告.docx",
+  "backup_sha256": "f9eb8b3b7806c21e29628b989b05b620477c297f4cee128286c8b29e0f8e5779",
+  "body_chinese_characters": 15674,
+  "future_work_chinese_characters": 5998,
+  "future_work_subsections": 10,
+  "ai_disclosure_at_end": true,
+  "preserved_existing_tables": 2,
+  "preserved_existing_images": 2,
+  "scope": "Documentation revision; proposals not implemented or counted as new experimental results."
+}

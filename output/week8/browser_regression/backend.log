@@ -1,0 +1,118 @@
+GUI Agent 本地执行器已启动：http://127.0.0.1:8765（仅预览）
+按 Control-C 停止。
+/Users/ziang/Documents/ChatGPT/New project/.venv/lib/python3.12/site-packages/torch/ao/nn/quantized/dynamic/modules/rnn.py:162: UserWarning: torch.quantize_per_tensor, torch.quantize_per_channel and other quantized tensor creation functions that produce tensors with dtype torch.quint8, torch.qint8, and torch.qint32 are deprecated and will be removed in a future PyTorch release. Please see https://github.com/pytorch/pytorch/issues/184982 for more information. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/quantized/Quantizer.cpp:116.)
+  w_ih = torch.quantize_per_tensor(
+/Users/ziang/Documents/ChatGPT/New project/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, device pinned memory won't be used.
+  super().__init__(loader)
+[16/Oct/2026 12:01:52] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:01:52] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:01:52] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:01:53] "POST /api/tasks HTTP/1.1" 202 -
+[16/Oct/2026 12:01:53] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:01:54] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:01:55] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:01:56] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:01:56] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:01:57] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:01:58] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:01:59] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:00] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:01] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:02] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:03] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:04] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:05] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:05] "GET /api/tasks/8dae2c629fbe HTTP/1.1" 200 -
+[16/Oct/2026 12:02:05] "GET /api/tasks/8dae2c629fbe/screenshot?t=1792123325981 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:06] "POST /api/tasks HTTP/1.1" 403 -
+[16/Oct/2026 12:02:06] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:06] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:06] "POST /api/tasks HTTP/1.1" 202 -
+[16/Oct/2026 12:02:06] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:07] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:08] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:09] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:10] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:11] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:12] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:13] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:14] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:15] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:15] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:15] "GET /api/tasks/bac35bcd19a6/screenshot?t=1792123335944 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:16] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:16] "GET /api/tasks/bac35bcd19a6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:16] "GET /api/tasks/bac35bcd19a6/screenshot?t=1792123336358 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:16] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:16] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:25] "POST /api/tasks HTTP/1.1" 202 -
+[16/Oct/2026 12:02:25] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:26] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:27] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:27] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:28] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:29] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:30] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:31] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:32] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:33] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:34] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:35] "GET /api/tasks/f8707aacd8f6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:35] "GET /api/tasks/f8707aacd8f6/screenshot?t=1792123355196 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:35] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:35] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:35] "POST /api/tasks HTTP/1.1" 202 -
+[16/Oct/2026 12:02:35] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:36] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:37] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:38] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:39] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:40] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:41] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:42] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:43] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:44] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:44] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:45] "GET /api/tasks/4fe0fdfc0656 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:45] "GET /api/tasks/4fe0fdfc0656/screenshot?t=1792123365873 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:46] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:47] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:47] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:47] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:47] "GET /api/health HTTP/1.1" 200 -
+
+本地执行器已停止。
+GUI Agent 本地执行器已启动：http://127.0.0.1:8765（仅预览）
+按 Control-C 停止。
+/Users/ziang/Documents/ChatGPT/New project/.venv/lib/python3.12/site-packages/torch/ao/nn/quantized/dynamic/modules/rnn.py:162: UserWarning: torch.quantize_per_tensor, torch.quantize_per_channel and other quantized tensor creation functions that produce tensors with dtype torch.quint8, torch.qint8, and torch.qint32 are deprecated and will be removed in a future PyTorch release. Please see https://github.com/pytorch/pytorch/issues/184982 for more information. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/quantized/Quantizer.cpp:116.)
+  w_ih = torch.quantize_per_tensor(
+/Users/ziang/Documents/ChatGPT/New project/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, device pinned memory won't be used.
+  super().__init__(loader)
+[16/Oct/2026 12:02:47] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:48] "GET / HTTP/1.1" 200 -
+[16/Oct/2026 12:02:48] "GET /api/health HTTP/1.1" 200 -
+[16/Oct/2026 12:02:48] "POST /api/tasks HTTP/1.1" 202 -
+[16/Oct/2026 12:02:48] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:49] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:50] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:50] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:51] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:52] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:53] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:54] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:55] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:56] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:57] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:58] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:59] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:59] "GET /api/tasks/3a47e34e60d6 HTTP/1.1" 200 -
+[16/Oct/2026 12:02:59] "GET /api/tasks/3a47e34e60d6/screenshot?t=1792123379911 HTTP/1.1" 200 -
+
+本地执行器已停止。

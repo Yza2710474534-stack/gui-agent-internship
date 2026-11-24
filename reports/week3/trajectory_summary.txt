@@ -1,0 +1,6 @@
+DATASET TO AGENT LOOP
+Provider: mock
+Total tasks: 3
+Completed tasks: 3
+Sources: {'webarena': 1, 'screenagent': 1, 'mind2web': 1}
+Real desktop actions: 0

@@ -1,0 +1,4 @@
+# Kaggle批量数据处理及后续基础Agent所需依赖
+datasets>=4.0
+langchain>=1.0
+langchain-core>=1.0

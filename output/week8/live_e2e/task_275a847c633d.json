@@ -1,0 +1,103 @@
+{
+  "ok": true,
+  "task": {
+    "id": "275a847c633d",
+    "task": "点击 VERIFY，确认出现 VERIFIED",
+    "mode": "live",
+    "status": "done",
+    "step": 4,
+    "created_at": "2026-10-16T11:59:27",
+    "updated_at": "2026-10-16T11:59:54",
+    "logs": [
+      {
+        "time": "11:59:28",
+        "message": "任务已由本地执行器接收",
+        "status": "已接收"
+      },
+      {
+        "time": "11:59:28",
+        "message": "正在加载 OCR 并读取当前屏幕",
+        "status": "进行中"
+      },
+      {
+        "time": "11:59:38",
+        "message": "屏幕识别完成，共发现 25 个文字区域",
+        "status": "完成"
+      },
+      {
+        "time": "11:59:38",
+        "message": "已定位“VERIFY”，坐标 (737, 358)",
+        "status": "完成"
+      },
+      {
+        "time": "11:59:38",
+        "message": "已执行安全动作：click",
+        "status": "完成"
+      },
+      {
+        "time": "11:59:46",
+        "message": "屏幕识别完成，共发现 25 个文字区域",
+        "status": "完成"
+      },
+      {
+        "time": "11:59:54",
+        "message": "屏幕识别完成，共发现 25 个文字区域",
+        "status": "完成"
+      },
+      {
+        "time": "11:59:54",
+        "message": "任务执行完成",
+        "status": "完成"
+      }
+    ],
+    "metrics": {
+      "ocr_items": 25,
+      "confidence": null,
+      "safety": "检查中"
+    },
+    "result": {
+      "task": "点击 VERIFY，确认出现 VERIFIED",
+      "mode": "live",
+      "status": "done",
+      "cycle": 2,
+      "action_count": 1,
+      "history": [
+        {
+          "cycle": 1,
+          "action": {
+            "type": "click",
+            "x": 737,
+            "y": 358
+          },
+          "attempt": 1,
+          "action_attempt": 1,
+          "success": true,
+          "feedback": "已确认出现“VERIFIED”",
+          "evidence": {
+            "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/275a847c633d/realtime_20261016_115938_734532.png",
+            "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/275a847c633d/realtime_20261016_115938_734532.ocr.json",
+            "expected_text": "VERIFIED",
+            "matched_text": [
+              "VERIFIED"
+            ]
+          }
+        }
+      ],
+      "completion_check": {
+        "success": true,
+        "message": "已确认出现“VERIFIED”",
+        "evidence": {
+          "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/275a847c633d/realtime_20261016_115946_368506.png",
+          "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/275a847c633d/realtime_20261016_115946_368506.ocr.json",
+          "expected_text": "VERIFIED",
+          "matched_text": [
+            "VERIFIED"
+          ]
+        }
+      },
+      "duration_seconds": 24.5417
+    },
+    "error": null,
+    "screenshot_url": "/api/tasks/275a847c633d/screenshot"
+  }
+}

@@ -1,0 +1,3 @@
+# Optional OCR stack. Install after requirements-mac.txt succeeds.
+easyocr>=1.7
+

@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+artifacts/
+tmp/
+outputs/
+/screenshots/
+*.zip
+~$*
+gui-agent-console/.openai/
+gui-agent-console/.sites-runtime/

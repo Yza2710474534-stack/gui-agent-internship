@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GUI Agent 任务控制台：创建任务、预览动作并查看运行证据。">
+  <meta name="theme-color" content="#f4f6f9">
+  <title>GUI Agent 控制台</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b6ef3'/%3E%3Cpath d='M18 21h28v22H18z' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M25 32h14M32 25v14' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f9;
+      --panel: #ffffff;
+      --panel-soft: #f8fafc;
+      --text: #172033;
+      --muted: #697386;
+      --subtle: #97a0af;
+      --line: #e5e9f0;
+      --blue: #1b6ef3;
+      --blue-dark: #0f56c9;
+      --blue-soft: #eaf2ff;
+      --green: #14a673;
+      --green-soft: #e7f8f1;
+      --amber: #d88a13;
+      --amber-soft: #fff5df;
+      --red: #dc4c64;
+      --shadow: 0 14px 38px rgba(22, 32, 51, 0.07);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { font-size: 16px; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, textarea { font: inherit; }
+
+    button { cursor: pointer; }
+
+    button:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(27, 110, 243, 0.2);
+      outline-offset: 2px;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 22px 14px;
+      background: #111827;
+      color: #fff;
+      z-index: 5;
+    }
+
+    .brand {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 34px;
+      border-radius: 13px;
+      background: var(--blue);
+      box-shadow: 0 8px 20px rgba(27, 110, 243, 0.35);
+    }
+
+    .brand svg { width: 24px; height: 24px; }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .nav-button {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto;
+      border: 0;
+      border-radius: 13px;
+      color: #8d98ab;
+      background: transparent;
+      transition: color 160ms ease, background 160ms ease, transform 160ms ease;
+    }
+
+    .nav-button:hover { color: #fff; background: #202b3c; transform: translateY(-1px); }
+    .nav-button.active { color: #fff; background: #26344a; }
+    .nav-button.active::before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      width: 3px;
+      height: 22px;
+      border-radius: 0 4px 4px 0;
+      background: #5d98ff;
+    }
+
+    .nav-button svg { width: 21px; height: 21px; }
+    .sidebar-bottom { margin-top: auto; }
+
+    .main-shell { min-width: 0; }
+
+    .topbar {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 34px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(14px);
+    }
+
+    .title-row { display: flex; align-items: center; gap: 12px; }
+    h1 { margin: 0; font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.02em; }
+
+    .preview-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: #365275;
+      background: #edf2f8;
+      font-size: 0.75rem;
+      font-weight: 650;
+    }
+
+    .system-state {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .system-state::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(20, 166, 115, 0.12);
+    }
+
+    .system-state.connecting::before { background: var(--amber); box-shadow: 0 0 0 4px rgba(216, 138, 19, 0.12); }
+    .system-state.disconnected::before { background: var(--red); box-shadow: 0 0 0 4px rgba(220, 76, 100, 0.12); }
+
+    .workspace {
+      width: min(1460px, 100%);
+      margin: 0 auto;
+      padding: 28px 34px 36px;
+    }
+
+    .overview {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .overview h2 {
+      margin: 0 0 6px;
+      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    .overview p { margin: 0; color: var(--muted); font-size: 0.9375rem; }
+
+    .status-card {
+      min-width: 220px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel);
+    }
+
+    .status-label { color: var(--muted); font-size: 0.75rem; }
+    .status-value { margin-top: 5px; font-size: 0.9375rem; font-weight: 700; }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: minmax(420px, 0.95fr) minmax(460px, 1.25fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .column { display: grid; gap: 20px; }
+
+    .panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 22px 16px;
+    }
+
+    .panel-title { margin: 0; font-size: 1rem; letter-spacing: -0.01em; }
+    .panel-note { margin-top: 4px; color: var(--muted); font-size: 0.8125rem; }
+
+    .task-form { padding: 0 22px 22px; }
+    .field-label { display: block; margin-bottom: 9px; font-size: 0.8125rem; font-weight: 700; }
+
+    textarea {
+      width: 100%;
+      min-height: 114px;
+      resize: vertical;
+      padding: 14px 15px;
+      border: 1px solid #dce2ea;
+      border-radius: 12px;
+      background: #fbfcfe;
+      color: var(--text);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    textarea:hover { border-color: #cbd3df; }
+    textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,110,243,0.09); }
+
+    .options-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .mode-group { flex: 1; }
+    .segmented {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 11px;
+      background: #eef2f6;
+    }
+
+    .mode-button {
+      min-width: 84px;
+      height: 36px;
+      border: 0;
+      border-radius: 8px;
+      color: var(--muted);
+      background: transparent;
+      font-size: 0.8125rem;
+      font-weight: 700;
+    }
+
+    .mode-button.selected {
+      color: var(--text);
+      background: #fff;
+      box-shadow: 0 2px 7px rgba(31, 41, 55, 0.1);
+    }
+
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      height: 44px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 11px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 0.875rem;
+      font-weight: 750;
+      box-shadow: 0 8px 18px rgba(27, 110, 243, 0.25);
+      transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .primary-button:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(27,110,243,0.3); }
+    .primary-button:disabled { cursor: not-allowed; opacity: 0.55; transform: none; box-shadow: none; }
+    .primary-button svg { width: 17px; height: 17px; }
+
+    .safety-note {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 17px;
+      padding: 12px 13px;
+      border-radius: 10px;
+      color: #5d6b80;
+      background: #f4f7fb;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .safety-note svg { flex: 0 0 auto; width: 17px; height: 17px; margin-top: 1px; color: #52729c; }
+
+    .run-panel { min-height: 280px; }
+
+    .request-meta {
+      margin-top: 6px;
+      color: var(--subtle);
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .run-controls { display: flex; gap: 8px; }
+    .icon-button {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--muted);
+      background: #fff;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .icon-button:hover { color: var(--text); background: #f6f8fb; border-color: #d7dde7; }
+    .icon-button:disabled { cursor: not-allowed; opacity: 0.4; }
+    .icon-button svg { width: 17px; height: 17px; }
+
+    .timeline { padding: 2px 22px 22px; }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 24px 1fr auto; gap: 10px; min-height: 46px; }
+    .timeline-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 23px;
+      bottom: -2px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .step-mark {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 23px;
+      height: 23px;
+      border: 2px solid #d9dfe8;
+      border-radius: 50%;
+      background: #fff;
+      color: transparent;
+    }
+
+    .timeline-item.done .step-mark { border-color: var(--green); background: var(--green); color: #fff; }
+    .timeline-item.active .step-mark { border: 6px solid var(--blue-soft); background: var(--blue); box-shadow: inset 0 0 0 4px var(--blue); }
+    .step-mark svg { width: 13px; height: 13px; }
+    .step-copy { padding-top: 2px; }
+    .step-title { font-size: 0.875rem; font-weight: 700; }
+    .step-detail { margin-top: 3px; color: var(--muted); font-size: 0.75rem; }
+    .step-time { padding-top: 3px; color: var(--subtle); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+
+    .monitor-panel .panel-head { padding-bottom: 14px; }
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #49617f;
+      background: #edf2f8;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .live-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #90a0b5; }
+    .live-pill.running::before { background: var(--blue); animation: pulse 1.4s infinite; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(27,110,243,0.28); }
+      50% { box-shadow: 0 0 0 5px rgba(27,110,243,0); }
+    }
+
+    .screen-wrap { padding: 0 22px 18px; }
+    .screen {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid #dfe4ec;
+      border-radius: 13px;
+      background: #eef2f7;
+    }
+
+    .local-screen-image {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #111827;
+    }
+
+    .screen.has-capture .local-screen-image { display: block; }
+    .screen.has-capture .browser-bar,
+    .screen.has-capture .screen-content { visibility: hidden; }
+
+    .capture-note {
+      margin-top: 8px;
+      color: var(--subtle);
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .browser-bar {
+      height: 38px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      border-bottom: 1px solid #dfe4ec;
+      background: #fff;
+    }
+
+    .window-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccd3dd; }
+    .address-bar { width: 48%; height: 15px; margin-left: 10px; border-radius: 7px; background: #eef1f5; }
+    .screen-content { height: calc(100% - 38px); display: grid; grid-template-columns: 27% 1fr; }
+    .mock-aside { padding: 16px 12px; border-right: 1px solid #dde3eb; background: #f8fafc; }
+    .mock-line { height: 8px; margin-bottom: 10px; border-radius: 5px; background: #dfe5ed; }
+    .mock-line.short { width: 58%; }
+    .mock-line.active { width: 85%; background: #a9c8fb; }
+    .mock-main { padding: 22px 24px; background: #fff; }
+    .mock-title { width: 42%; height: 13px; margin-bottom: 16px; border-radius: 6px; background: #cdd5df; }
+    .mock-search { width: 72%; height: 32px; margin-bottom: 20px; border: 1px solid #dbe1e9; border-radius: 8px; background: #fbfcfd; }
+    .mock-card { width: 88%; height: 40px; margin-bottom: 10px; border-radius: 8px; background: #f1f4f8; }
+
+    .target-box {
+      position: absolute;
+      left: 41%;
+      top: 39%;
+      width: 48%;
+      height: 42px;
+      border: 2px solid var(--blue);
+      border-radius: 9px;
+      opacity: 0;
+      transform: scale(0.97);
+      transition: opacity 220ms ease, transform 220ms ease;
+      box-shadow: 0 0 0 3px rgba(27,110,243,0.12);
+    }
+
+    .target-box.show { opacity: 1; transform: scale(1); }
+    .target-tag { position: absolute; top: -23px; right: -2px; padding: 3px 7px; border-radius: 5px 5px 0 0; color: #fff; background: var(--blue); font-size: 0.625rem; font-weight: 750; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      background: var(--panel-soft);
+    }
+
+    .metric { padding: 15px 18px; }
+    .metric + .metric { border-left: 1px solid var(--line); }
+    .metric-label { color: var(--muted); font-size: 0.75rem; }
+    .metric-value { margin-top: 5px; font-size: 1rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+    .metric-value.safe { color: var(--green); }
+
+    .log-list { padding: 0 22px 20px; }
+    .log-row {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      min-height: 38px;
+      border-top: 1px solid #eff2f6;
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .log-row:first-child { border-top: 0; }
+    .log-time { color: var(--subtle); font-variant-numeric: tabular-nums; }
+    .log-message { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .log-status { padding: 3px 7px; border-radius: 6px; color: #48627f; background: #edf2f7; font-size: 0.6875rem; font-weight: 700; }
+    .log-status.ok { color: #087653; background: var(--green-soft); }
+    .log-status.run { color: #145fc8; background: var(--blue-soft); }
+
+    .empty-log { padding: 14px 0; color: var(--subtle); font-size: 0.8125rem; text-align: center; }
+
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: min(360px, calc(100vw - 32px));
+      padding: 13px 15px;
+      border: 1px solid #dce2ea;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 18px 45px rgba(18, 29, 48, 0.16);
+      color: var(--text);
+      font-size: 0.8125rem;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast-mark { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; color: #fff; background: var(--green); }
+    .toast-mark svg { width: 14px; height: 14px; }
+    .toast.error .toast-mark { background: var(--red); }
+    .toast.error .toast-mark svg, .toast.info .toast-mark svg { display: none; }
+    .toast.error .toast-mark::after { content: "!"; font-weight: 800; }
+    .toast.info .toast-mark { background: var(--blue); }
+    .toast.info .toast-mark::after { content: "i"; font-weight: 800; }
+
+    @media (max-width: 980px) {
+      .dashboard { grid-template-columns: 1fr; }
+      .monitor-panel { order: -1; }
+      .workspace { padding: 24px; }
+      .topbar { padding: 0 24px; }
+    }
+
+    @media (max-width: 680px) {
+      .app-shell { display: block; padding-bottom: 68px; }
+      .sidebar {
+        position: fixed;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 68px;
+        flex-direction: row;
+        justify-content: center;
+        padding: 9px 16px;
+      }
+      .brand, .sidebar-bottom { display: none; }
+      .side-nav { flex-direction: row; justify-content: center; gap: 14px; width: auto; }
+      .nav-button { width: 48px; height: 48px; }
+      .nav-button.active::before { left: 13px; top: -9px; width: 22px; height: 3px; border-radius: 0 0 4px 4px; }
+      .topbar { height: 66px; padding: 0 18px; }
+      .preview-badge, .system-state span { display: none; }
+      .workspace { padding: 20px 16px 24px; }
+      .overview { align-items: flex-start; margin-bottom: 18px; }
+      .status-card { display: none; }
+      .dashboard { display: flex; flex-direction: column; align-items: stretch; }
+      .monitor-panel { order: 0; }
+      .panel-head { padding: 18px 18px 14px; }
+      .task-form, .timeline, .screen-wrap, .log-list { padding-right: 18px; padding-left: 18px; }
+      .options-row { align-items: stretch; flex-direction: column; }
+      .primary-button { width: 100%; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .metric:last-child { grid-column: span 2; border-top: 1px solid var(--line); border-left: 0; }
+      .screen-wrap { padding-bottom: 16px; }
+      .log-row { grid-template-columns: 54px minmax(0, 1fr); }
+      .log-status { display: none; }
+      .toast { right: 16px; bottom: 84px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="brand" aria-label="GUI Agent">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <nav class="side-nav">
+        <button class="nav-button active" aria-label="控制台" title="控制台">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+        <button class="nav-button" aria-label="任务记录" title="任务记录">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8v5l3 2M21 12a9 9 0 1 1-3-6.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 2v4h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="nav-button" aria-label="数据集" title="数据集">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" stroke-width="1.8"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-button" aria-label="设置" title="设置">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 .6 1 1.7 1.7 0 0 0 1.1.4h.1v4h-.1A1.7 1.7 0 0 0 19.4 15Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-shell">
+      <header class="topbar">
+        <div class="title-row">
+          <h1>GUI Agent</h1>
+          <span class="preview-badge">前端演示</span>
+        </div>
+        <div class="system-state connecting" id="connectionState"><span>正在连接本地执行器</span></div>
+      </header>
+
+      <div class="workspace">
+        <section class="overview" aria-labelledby="workspace-title">
+          <div>
+            <span class="eyebrow">Workspace</span>
+            <h2 id="workspace-title">任务控制台</h2>
+            <p>描述目标，预览 Agent 下一步动作。</p>
+          </div>
+          <div class="status-card" aria-label="当前状态">
+            <div class="status-label">当前状态</div>
+            <div class="status-value" id="overviewStatus">等待新任务</div>
+          </div>
+        </section>
+
+        <div class="dashboard">
+          <div class="column">
+            <section class="panel" aria-labelledby="task-title">
+              <div class="panel-head">
+                <div>
+                  <h3 class="panel-title" id="task-title">创建任务</h3>
+                  <div class="panel-note">用自然语言描述你希望完成的操作</div>
+                </div>
+              </div>
+              <form class="task-form" id="taskForm">
+                <label class="field-label" for="taskInput">任务内容</label>
+                <textarea id="taskInput" maxlength="240" placeholder="例如：在浏览器中搜索 GUI Agent，并打开第一条结果">在浏览器中搜索 GUI Agent，并确认结果页面已加载</textarea>
+                <div class="options-row">
+                  <div class="mode-group">
+                    <span class="field-label">运行模式</span>
+                    <div class="segmented" role="group" aria-label="运行模式">
+                      <button type="button" class="mode-button selected" data-mode="preview" aria-pressed="true">预览</button>
+                      <button type="button" class="mode-button" data-mode="live" aria-pressed="false">实时</button>
+                    </div>
+                  </div>
+                  <button class="primary-button" id="startButton" type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 9 6-9 6V6Z" fill="currentColor"/></svg>
+                    <span>开始任务</span>
+                  </button>
+                </div>
+                <div class="safety-note" id="safetyNote">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.9 8.3 7 10 4.1-1.7 7-5.4 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>预览模式只生成动作方案，不会控制鼠标或键盘。</span>
+                </div>
+              </form>
+            </section>
+
+            <section class="panel run-panel" aria-labelledby="run-title">
+              <div class="panel-head">
+                <div>
+                  <h3 class="panel-title" id="run-title">执行进度</h3>
+                  <div class="panel-note" id="runNote">尚未开始</div>
+                  <div class="request-meta" id="requestMeta" aria-live="polite">最近接口：尚未提交</div>
+                  <button type="button" id="retryStatusButton" hidden>恢复状态读取</button>
+                </div>
+                <div class="run-controls">
+                  <button class="icon-button" id="pauseButton" aria-label="暂停任务" title="暂停" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  </button>
+                  <button class="icon-button" id="stopButton" aria-label="停止任务" title="停止" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="timeline" id="timeline" aria-live="polite"></div>
+            </section>
+          </div>
+
+          <div class="column">
+            <section class="panel monitor-panel" aria-labelledby="monitor-title">
+              <div class="panel-head">
+                <div>
+                  <h3 class="panel-title" id="monitor-title">屏幕观察</h3>
+                  <div class="panel-note">最近一次截图与定位结果</div>
+                </div>
+                <span class="live-pill" id="livePill">待机</span>
+              </div>
+              <div class="screen-wrap">
+                <div class="screen" id="screenPreview" role="img" aria-label="本地执行器屏幕观察预览">
+                  <img class="local-screen-image" id="localScreenImage" alt="本地执行器最近一次屏幕截图">
+                  <div class="browser-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i><div class="address-bar"></div></div>
+                  <div class="screen-content">
+                    <div class="mock-aside"><div class="mock-line short"></div><div class="mock-line active"></div><div class="mock-line"></div><div class="mock-line short"></div></div>
+                    <div class="mock-main"><div class="mock-title"></div><div class="mock-search"></div><div class="mock-card"></div><div class="mock-card"></div></div>
+                  </div>
+                  <div class="target-box" id="targetBox"><span class="target-tag">目标区域</span></div>
+                </div>
+                <div class="capture-note" id="captureNote" aria-live="polite">尚未收到本地截图</div>
+                <button type="button" id="retryCaptureButton" hidden>重试截图</button>
+              </div>
+              <div class="metrics">
+                <div class="metric"><div class="metric-label">识别文字</div><div class="metric-value" id="ocrMetric">—</div></div>
+                <div class="metric"><div class="metric-label">动作置信度</div><div class="metric-value" id="confidenceMetric">—</div></div>
+                <div class="metric"><div class="metric-label">安全检查</div><div class="metric-value safe" id="safetyMetric">已就绪</div></div>
+              </div>
+            </section>
+
+            <section class="panel" aria-labelledby="log-title">
+              <div class="panel-head">
+                <div>
+                  <h3 class="panel-title" id="log-title">动作日志</h3>
+                  <div class="panel-note">每一步都会留下可复核记录</div>
+                </div>
+              </div>
+              <div class="log-list" id="logList" aria-live="polite"><div class="empty-log">暂无运行记录</div></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span id="toastMessage">动作预览已生成</span>
+  </div>
+
+  <script>
+    const API_BASE = "http://127.0.0.1:8765";
+    const terminalStatuses = new Set(["preview_ready", "done", "stopped", "failed", "action_failed", "completion_failed", "timed_out", "cycle_limit_reached"]);
+    const steps = [
+      { title: "理解任务", detail: "解析目标与完成条件" },
+      { title: "观察屏幕", detail: "本地截图并识别界面元素" },
+      { title: "生成动作", detail: "规划下一步安全操作" },
+      { title: "返回结果", detail: "保存截图、坐标与运行日志" }
+    ];
+    const state = { mode: "preview", running: false, paused: false, step: -1, taskId: null, pollTimer: null, connected: false, liveEnabled: false, lastError: null, lastApi: null };
+    const els = {
+      taskForm: document.getElementById("taskForm"), taskInput: document.getElementById("taskInput"),
+      startButton: document.getElementById("startButton"), pauseButton: document.getElementById("pauseButton"),
+      stopButton: document.getElementById("stopButton"), timeline: document.getElementById("timeline"),
+      runNote: document.getElementById("runNote"), logList: document.getElementById("logList"),
+      requestMeta: document.getElementById("requestMeta"),
+      livePill: document.getElementById("livePill"), overviewStatus: document.getElementById("overviewStatus"),
+      targetBox: document.getElementById("targetBox"), ocrMetric: document.getElementById("ocrMetric"),
+      confidenceMetric: document.getElementById("confidenceMetric"), safetyMetric: document.getElementById("safetyMetric"),
+      safetyNote: document.getElementById("safetyNote"), toast: document.getElementById("toast"),
+      toastMessage: document.getElementById("toastMessage"), connectionState: document.getElementById("connectionState"),
+      screenPreview: document.getElementById("screenPreview"), localScreenImage: document.getElementById("localScreenImage"),
+      captureNote: document.getElementById("captureNote"),
+      retryStatusButton: document.getElementById("retryStatusButton"),
+      retryCaptureButton: document.getElementById("retryCaptureButton")
+    };
+
+    function renderTimeline() {
+      els.timeline.innerHTML = steps.map((item, index) => {
+        const status = index < state.step ? "done" : index === state.step ? "active" : "";
+        const label = index < state.step ? "完成" : index === state.step ? (state.paused ? "已暂停" : "进行中") : "等待";
+        return `<div class="timeline-item ${status}"><span class="step-mark">${status === "done" ? '<svg viewBox="0 0 24 24" fill="none"><path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : ""}</span><div class="step-copy"><div class="step-title">${item.title}</div><div class="step-detail">${item.detail}</div></div><span class="step-time">${label}</span></div>`;
+      }).join("");
+    }
+
+    function showToast(message, kind = "error") {
+      els.toastMessage.textContent = message;
+      els.toast.classList.toggle("error", kind === "error");
+      els.toast.classList.toggle("info", kind === "info");
+      els.toast.classList.add("show");
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => els.toast.classList.remove("show"), 3200);
+    }
+
+    function renderRequestMeta(note = "") {
+      const request = state.lastApi;
+      if (!request) return;
+      const task = state.taskId ? ` · 任务 ${state.taskId}` : "";
+      const detail = note ? ` · ${note}` : "";
+      els.requestMeta.textContent = `最近接口：${request.method} ${request.path} · ${request.status}${task}${detail}`;
+    }
+
+    async function api(path, options = {}) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), options.timeout || 5000);
+      let responseReceived = false;
+      try {
+        const response = await fetch(API_BASE + path, {
+          method: options.method || "GET",
+          mode: "cors",
+          credentials: "omit",
+          headers: options.body ? { "Content-Type": "application/json" } : {},
+          body: options.body ? JSON.stringify(options.body) : undefined,
+          signal: controller.signal
+        });
+        responseReceived = true;
+        const data = await response.json();
+        if (!(path === "/api/health" && state.taskId)) {
+          state.lastApi = { method: options.method || "GET", path, status: response.status };
+          renderRequestMeta();
+        }
+        if (!response.ok || data.ok === false) throw new Error(data.error || `请求失败（${response.status}）`);
+        return data;
+      } catch (error) {
+        if (!responseReceived) {
+          const status = error.name === "AbortError" ? "超时" : "网络错误";
+          state.lastApi = { method: options.method || "GET", path, status };
+          renderRequestMeta(error.name === "AbortError" ? "本地执行器未响应" : "本地执行器不可达");
+        }
+        if (error.name === "AbortError") throw new Error("本地执行器响应超时");
+        if (!responseReceived && error instanceof TypeError) throw new Error("本地执行器不可达");
+        throw error;
+      } finally { clearTimeout(timeout); }
+    }
+
+    function updateConnection(connected, health = null) {
+      state.connected = connected;
+      state.liveEnabled = Boolean(health?.live_enabled);
+      els.connectionState.classList.toggle("connecting", false);
+      els.connectionState.classList.toggle("disconnected", !connected);
+      els.connectionState.querySelector("span").textContent = connected
+        ? (state.liveEnabled ? "本地执行器已连接 · 实时已开启" : "本地执行器已连接 · 仅预览")
+        : "本地执行器未连接";
+      if (!state.running && !state.taskId) els.overviewStatus.textContent = connected ? "等待新任务" : "等待本地执行器";
+    }
+
+    async function checkConnection({ silent = false } = {}) {
+      try {
+        const health = await api("/api/health", { timeout: 2200 });
+        updateConnection(true, health);
+        return health;
+      } catch (error) {
+        updateConnection(false);
+        if (!silent) showToast("请先启动本地执行器");
+        return null;
+      }
+    }
+
+    function setMode(mode) {
+      if (state.running) return;
+      state.mode = mode;
+      document.querySelectorAll(".mode-button").forEach(button => {
+        const selected = button.dataset.mode === mode;
+        button.classList.toggle("selected", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
+      els.safetyNote.querySelector("span").textContent = mode === "preview"
+        ? "预览会读取本地屏幕并生成动作方案，但不会控制鼠标或键盘。"
+        : state.liveEnabled
+          ? "实时模式仅执行一次经过 OCR 定位和安全检查的文字点击。"
+          : "本地执行器当前仅允许预览；实时点击需用 --enable-live 重新启动。";
+    }
+
+    function setRunning(running) {
+      state.running = running;
+      els.startButton.disabled = running;
+      els.taskInput.disabled = running;
+      els.pauseButton.disabled = !running;
+      els.stopButton.disabled = !running;
+      document.querySelectorAll(".mode-button").forEach(button => button.disabled = running);
+      els.livePill.classList.toggle("running", running && !state.paused);
+    }
+
+    function statusCopy(task) {
+      const map = {
+        queued: ["任务已排队", "等待本地执行器"], running: ["正在理解任务", "本地任务已启动"],
+        observing: ["正在观察屏幕", "正在截图并识别文字"], planning: ["正在生成动作", "只接受白名单动作"],
+        paused: ["任务已暂停", "当前进度已保留"], stopping: ["正在停止", "等待当前安全步骤结束"],
+        preview_ready: ["动作方案已生成", "预览完成，没有执行鼠标或键盘"], done: ["任务执行完成", task.result?.completion_check?.message || "动作和验证证据已保存"],
+        stopped: ["任务已停止", "没有继续执行后续动作"], failed: ["任务未完成", task.error || "请检查本地权限"],
+        action_failed: ["动作验证失败", task.error || "未执行后续动作"], completion_failed: ["完成条件未通过", task.error || "请查看日志"],
+        timed_out: ["任务运行超时", task.error || "已达到时间上限"],
+        cycle_limit_reached: ["任务达到循环上限", task.error || "未继续执行"]
+      };
+      return map[task.status] || ["正在处理", "本地执行器正在工作"];
+    }
+
+    function renderLogs(logs = []) {
+      if (!logs.length) { els.logList.innerHTML = '<div class="empty-log">暂无运行记录</div>'; return; }
+      els.logList.innerHTML = logs.slice().reverse().slice(0, 5).map(log => {
+        const style = log.status === "失败" ? "" : log.status === "进行中" || log.status === "已接收" ? "run" : "ok";
+        return `<div class="log-row"><span class="log-time">${log.time}</span><span class="log-message"></span><span class="log-status ${style}">${log.status}</span></div>`;
+      }).join("");
+      els.logList.querySelectorAll(".log-message").forEach((node, index) => node.textContent = logs.slice().reverse().slice(0, 5)[index].message);
+    }
+
+    function renderTask(task) {
+      els.retryStatusButton.hidden = true;
+      state.taskId = task.id;
+      state.paused = task.status === "paused";
+      state.step = Math.max(0, Math.min(4, Number(task.step || 0)));
+      const finished = terminalStatuses.has(task.status);
+      setRunning(!finished);
+      renderTimeline();
+      const [title, note] = statusCopy(task);
+      els.overviewStatus.textContent = title;
+      els.runNote.textContent = note;
+      els.livePill.textContent = task.status === "preview_ready" ? "预览完成" : task.status === "done" ? "执行完成" : task.status === "paused" ? "已暂停" : finished ? "已结束" : "本地运行中";
+      els.ocrMetric.textContent = task.metrics?.ocr_items == null ? "—" : `${task.metrics.ocr_items} 项`;
+      els.confidenceMetric.textContent = task.metrics?.confidence == null ? "—" : `${task.metrics.confidence}%`;
+      els.safetyMetric.textContent = task.metrics?.safety || "检查中";
+      els.targetBox.classList.toggle("show", Boolean(task.result?.proposed_action));
+      renderLogs(task.logs);
+      els.pauseButton.setAttribute("aria-label", state.paused ? "继续任务" : "暂停任务");
+      els.pauseButton.title = state.paused ? "继续" : "暂停";
+      if (task.screenshot_url) {
+        els.captureNote.textContent = "正在加载本地截图";
+        els.localScreenImage.onload = () => {
+          els.retryCaptureButton.hidden = true;
+          els.screenPreview.classList.add("has-capture");
+          els.captureNote.textContent = "截图已加载，可复核本次屏幕观察";
+        };
+        els.localScreenImage.onerror = () => {
+          els.retryCaptureButton.hidden = false;
+          els.screenPreview.classList.remove("has-capture");
+          els.captureNote.textContent = "截图加载失败，请查看本地执行器日志";
+          showToast("本地截图加载失败");
+        };
+        els.localScreenImage.src = API_BASE + task.screenshot_url + `?t=${Date.now()}`;
+      } else if (finished) {
+        els.captureNote.textContent = "本次任务未返回本地截图";
+      }
+      if (task.error && task.error !== state.lastError) { state.lastError = task.error; showToast(task.error); }
+      if (finished) { clearInterval(state.pollTimer); state.pollTimer = null; }
+    }
+
+    function renderRequestFailure(error, { polling = false } = {}) {
+      setRunning(polling);
+      els.retryStatusButton.hidden = !polling;
+      state.paused = false;
+      state.step = -1;
+      renderTimeline();
+      const status = state.lastApi?.status;
+      els.overviewStatus.textContent = status === "超时" ? "请求超时"
+        : status === "网络错误" ? "本地执行器未连接"
+        : polling ? "状态读取中断" : "任务未被接收";
+      els.runNote.textContent = error.message;
+      els.livePill.textContent = "请求失败";
+      if (!polling) {
+        els.ocrMetric.textContent = "—";
+        els.confidenceMetric.textContent = "—";
+        els.safetyMetric.textContent = "未执行";
+        els.captureNote.textContent = "本次请求未生成截图";
+      }
+    }
+
+    async function pollTask() {
+      if (!state.taskId || state.polling) return;
+      state.polling = true;
+      try {
+        const data = await api(`/api/tasks/${state.taskId}`);
+        renderTask(data.task);
+      } catch (error) {
+        clearInterval(state.pollTimer); state.pollTimer = null;
+        if (state.lastApi?.status === "网络错误") updateConnection(false);
+        renderRequestFailure(error, { polling: true });
+        showToast(error.message);
+      } finally { state.polling = false; }
+    }
+
+    async function runTask(taskText) {
+      const task = String(taskText ?? els.taskInput.value).trim();
+      if (!task || task.length > 240) { els.taskInput.focus(); showToast("任务内容必须为 1–240 个字符"); return { ok: false, error: "task_required" }; }
+      if (!state.connected && !await checkConnection()) return { ok: false, error: "executor_offline" };
+      els.taskInput.value = task;
+      state.lastError = null;
+      state.taskId = null;
+      state.step = 0;
+      renderTimeline();
+      renderLogs();
+      els.overviewStatus.textContent = "正在提交任务";
+      els.runNote.textContent = "等待本地执行器响应";
+      els.livePill.textContent = "提交中";
+      els.ocrMetric.textContent = "—";
+      els.confidenceMetric.textContent = "—";
+      els.safetyMetric.textContent = "检查中";
+      els.screenPreview.classList.remove("has-capture");
+      els.captureNote.textContent = "等待本地截图";
+      els.targetBox.classList.remove("show");
+      setRunning(true);
+      els.retryStatusButton.hidden = true;
+      els.retryCaptureButton.hidden = true;
+      try {
+        const data = await api("/api/tasks", { method: "POST", body: { task, mode: state.mode }, timeout: 8000 });
+        renderRequestMeta(`已接收`);
+        renderTask(data.task);
+        clearInterval(state.pollTimer);
+        state.pollTimer = setInterval(pollTask, 900);
+        await pollTask();
+        return { ok: true, task_id: data.task.id, mode: state.mode };
+      } catch (error) {
+        if (state.lastApi?.status === "网络错误") updateConnection(false);
+        renderRequestFailure(error);
+        showToast(error.message);
+        return { ok: false, error: error.message };
+      }
+    }
+
+    async function controlTask(action) {
+      if (!state.taskId) return { ok: false, error: "no_active_task" };
+      try {
+        const data = await api(`/api/tasks/${state.taskId}/${action}`, { method: "POST" });
+        renderTask(data.task);
+        return { ok: true, status: data.task.status };
+      } catch (error) { showToast(error.message); return { ok: false, error: error.message }; }
+    }
+
+    els.taskForm.addEventListener("submit", event => { event.preventDefault(); void runTask(); });
+    document.querySelectorAll(".mode-button").forEach(button => button.addEventListener("click", () => setMode(button.dataset.mode)));
+    els.stopButton.addEventListener("click", () => void controlTask("stop"));
+    els.pauseButton.addEventListener("click", () => void controlTask(state.paused ? "resume" : "pause"));
+    els.retryStatusButton.addEventListener("click", async () => {
+      els.retryStatusButton.disabled = true;
+      try {
+        await pollTask();
+        if (state.running && els.retryStatusButton.hidden && !state.pollTimer) state.pollTimer = setInterval(pollTask, 900);
+      } finally { els.retryStatusButton.disabled = false; }
+    });
+    els.retryCaptureButton.addEventListener("click", () => {
+      if (els.localScreenImage.src) {
+        els.captureNote.textContent = "正在加载本地截图";
+        const url = new URL(els.localScreenImage.src);
+        url.searchParams.set("t", Date.now());
+        els.localScreenImage.src = url.href;
+      }
+    });
+    document.querySelectorAll(".nav-button:not(.active)").forEach(button => button.addEventListener("click", () => showToast("此页面将在后续版本开放", "info")));
+
+    function registerWebMCP() {
+      const context = document.modelContext;
+      if (!context?.registerTool) return;
+      const controller = new AbortController();
+      const report = error => console.warn("WebMCP registration failed", error);
+      try {
+        Promise.resolve(context.registerTool({
+          name: "start_preview_task", title: "开始本地预览任务",
+          description: "把任务发送到用户电脑上的 GUI Agent 执行器，读取当前屏幕并生成安全动作预览。",
+          inputSchema: { type: "object", properties: { task: { type: "string", minLength: 1, maxLength: 240 } }, required: ["task"], additionalProperties: false },
+          annotations: { readOnlyHint: false, untrustedContentHint: false },
+          async execute(input) {
+            if (!input || typeof input.task !== "string" || !input.task.trim() || input.task.length > 240) throw new Error("任务内容必须为 1–240 个字符");
+            setMode("preview");
+            const result = await runTask(input.task);
+            if (!result.ok) throw new Error(result.error);
+            return result;
+          }
+        }, { signal: controller.signal })).catch(report);
+        Promise.resolve(context.registerTool({
+          name: "stop_active_task", title: "停止本地任务",
+          description: "停止本地 GUI Agent 当前正在运行的任务并保留日志。",
+          inputSchema: { type: "object", properties: {}, additionalProperties: false },
+          annotations: { readOnlyHint: false, untrustedContentHint: false },
+          execute() { return controlTask("stop"); }
+        }, { signal: controller.signal })).catch(report);
+      } catch (error) { report(error); }
+    }
+
+    renderTimeline();
+    void checkConnection({ silent: true });
+    setInterval(() => { if (!state.running) void checkConnection({ silent: true }); }, 10000);
+    registerWebMCP();
+  </script>
+</body>
+</html>

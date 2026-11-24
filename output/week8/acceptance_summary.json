@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-10-16T12:09:30+08:00",
+  "automatic_tests": 126,
+  "browser_regression_scenarios": 8,
+  "live_suite_scenarios": 7,
+  "viewport_widths": 6,
+  "passed": true,
+  "evidence_sources": [
+    "verification/regression_summary.json",
+    "browser_regression/results.json",
+    "live_e2e/results.json"
+  ],
+  "invocation_note": "Evidence consolidated from separately executed suites; no scenario count merged with unit count",
+  "main_body_chinese_characters_verified_in_docx": 10996,
+  "document_pages": {
+    "第八周周报": 2,
+    "第八周验收测试报告": 8,
+    "第八周项目结项报告": 26
+  },
+  "visual_review": "All final rendered pages inspected; Chinese fonts, tables, images, captions and contents checked",
+  "live_success": {
+    "id": "real_live_click_success",
+    "result": "passed",
+    "elapsed_seconds": 26.335,
+    "input": "点击 VERIFY，确认出现 VERIFIED",
+    "task_id": "4067068a4df6",
+    "backend_status": "done",
+    "action_count": 1,
+    "target_dom": "VERIFIED",
+    "target_click_count": 1,
+    "expected_ocr": "VERIFIED",
+    "completion_check": {
+      "success": true,
+      "message": "已确认出现“VERIFIED”",
+      "evidence": {
+        "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120510_627332.png",
+        "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/4067068a4df6/realtime_20261016_120510_627332.ocr.json",
+        "expected_text": "VERIFIED",
+        "matched_text": [
+          "VERIFIED"
+        ]
+      }
+    },
+    "duration_seconds": 23.5778
+  }
+}

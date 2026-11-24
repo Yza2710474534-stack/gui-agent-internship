@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "task": {
+    "id": "b6d558b1d179",
+    "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+    "mode": "preview",
+    "status": "preview_ready",
+    "step": 4,
+    "created_at": "2026-10-16T12:06:02",
+    "updated_at": "2026-10-16T12:06:10",
+    "logs": [
+      {
+        "time": "12:06:02",
+        "message": "任务已由本地执行器接收",
+        "status": "已接收"
+      },
+      {
+        "time": "12:06:02",
+        "message": "正在加载 OCR 并读取当前屏幕",
+        "status": "进行中"
+      },
+      {
+        "time": "12:06:10",
+        "message": "屏幕识别完成，共发现 25 个文字区域",
+        "status": "完成"
+      },
+      {
+        "time": "12:06:10",
+        "message": "已定位“VERIFY”，坐标 (737, 358)",
+        "status": "完成"
+      },
+      {
+        "time": "12:06:10",
+        "message": "动作方案已生成",
+        "status": "完成"
+      }
+    ],
+    "metrics": {
+      "ocr_items": 25,
+      "confidence": 99.8,
+      "safety": "通过"
+    },
+    "result": {
+      "task": "点击 VERIFY，确认出现 VERIFIED。窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证窄屏长文案验证",
+      "mode": "preview",
+      "status": "preview_ready",
+      "cycle": 1,
+      "action_count": 0,
+      "history": [],
+      "proposed_action": {
+        "type": "click",
+        "x": 737,
+        "y": 358
+      },
+      "observation": {
+        "image": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/b6d558b1d179/realtime_20261016_120602_733104.png",
+        "ocr": "/Users/ziang/Documents/ChatGPT/New project/output/local_bridge/b6d558b1d179/realtime_20261016_120602_733104.ocr.json",
+        "ocr_item_count": 25,
+        "low_confidence_item_count": 2
+      },
+      "duration_seconds": 7.4338
+    },
+    "error": null,
+    "screenshot_url": "/api/tasks/b6d558b1d179/screenshot"
+  }
+}

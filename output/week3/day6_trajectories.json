@@ -1,0 +1,159 @@
+{
+  "summary": {
+    "provider": "mock",
+    "total_tasks": 3,
+    "completed_tasks": 3,
+    "source_counts": {
+      "webarena": 1,
+      "screenagent": 1,
+      "mind2web": 1
+    },
+    "real_desktop_actions": 0
+  },
+  "trajectories": [
+    {
+      "source_dataset": "webarena",
+      "task_id": "webarena_2",
+      "instruction": "Check out the classification section",
+      "execution_mode": "offline_simulation",
+      "reference_step_count": 2,
+      "agent_state": {
+        "task": "Check out the classification section",
+        "model_name": "mock",
+        "status": "done",
+        "current_step": 3,
+        "steps": [
+          {
+            "step_id": 1,
+            "description": "观察当前界面并识别可操作元素",
+            "status": "done"
+          },
+          {
+            "step_id": 2,
+            "description": "执行任务：Check out the classification section",
+            "status": "done"
+          },
+          {
+            "step_id": 3,
+            "description": "检查界面结果是否符合任务要求",
+            "status": "done"
+          }
+        ],
+        "done_condition": "界面结果符合用户任务要求",
+        "history": [
+          {
+            "step_id": 1,
+            "success": true,
+            "feedback": "离线模拟完成第 1 步，未操作真实界面"
+          },
+          {
+            "step_id": 2,
+            "success": true,
+            "feedback": "离线模拟完成第 2 步，未操作真实界面"
+          },
+          {
+            "step_id": 3,
+            "success": true,
+            "feedback": "离线模拟完成第 3 步，未操作真实界面"
+          }
+        ]
+      }
+    },
+    {
+      "source_dataset": "screenagent",
+      "task_id": "screenagent_02ea503d419c440cbda9e42263706d6a",
+      "instruction": "上网查找冯诺依曼的相关资料",
+      "execution_mode": "offline_simulation",
+      "reference_step_count": 2,
+      "agent_state": {
+        "task": "上网查找冯诺依曼的相关资料",
+        "model_name": "mock",
+        "status": "done",
+        "current_step": 3,
+        "steps": [
+          {
+            "step_id": 1,
+            "description": "观察当前界面并识别可操作元素",
+            "status": "done"
+          },
+          {
+            "step_id": 2,
+            "description": "执行任务：上网查找冯诺依曼的相关资料",
+            "status": "done"
+          },
+          {
+            "step_id": 3,
+            "description": "检查界面结果是否符合任务要求",
+            "status": "done"
+          }
+        ],
+        "done_condition": "界面结果符合用户任务要求",
+        "history": [
+          {
+            "step_id": 1,
+            "success": true,
+            "feedback": "离线模拟完成第 1 步，未操作真实界面"
+          },
+          {
+            "step_id": 2,
+            "success": true,
+            "feedback": "离线模拟完成第 2 步，未操作真实界面"
+          },
+          {
+            "step_id": 3,
+            "success": true,
+            "feedback": "离线模拟完成第 3 步，未操作真实界面"
+          }
+        ]
+      }
+    },
+    {
+      "source_dataset": "mind2web",
+      "task_id": "mind2web_7bda9645-0b5f-470a-8dd7-6af0bff4da68",
+      "instruction": "Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest",
+      "execution_mode": "offline_simulation",
+      "reference_step_count": 11,
+      "agent_state": {
+        "task": "Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest",
+        "model_name": "mock",
+        "status": "done",
+        "current_step": 3,
+        "steps": [
+          {
+            "step_id": 1,
+            "description": "观察当前界面并识别可操作元素",
+            "status": "done"
+          },
+          {
+            "step_id": 2,
+            "description": "执行任务：Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest",
+            "status": "done"
+          },
+          {
+            "step_id": 3,
+            "description": "检查界面结果是否符合任务要求",
+            "status": "done"
+          }
+        ],
+        "done_condition": "界面结果符合用户任务要求",
+        "history": [
+          {
+            "step_id": 1,
+            "success": true,
+            "feedback": "离线模拟完成第 1 步，未操作真实界面"
+          },
+          {
+            "step_id": 2,
+            "success": true,
+            "feedback": "离线模拟完成第 2 步，未操作真实界面"
+          },
+          {
+            "step_id": 3,
+            "success": true,
+            "feedback": "离线模拟完成第 3 步，未操作真实界面"
+          }
+        ]
+      }
+    }
+  ]
+}

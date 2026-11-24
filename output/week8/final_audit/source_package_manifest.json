@@ -1,0 +1,8 @@
+{
+  "archive": "output/项目源码与结项材料_20261016.zip",
+  "files": 217,
+  "bytes": 15694626,
+  "sha256": "9f17ee350a866639c819fb743ccf0cdc9e5262fe04d39cea1c1a1f9589b4f25f",
+  "scope": "Current code, public local data, historical reports, final audit and selected controlled test evidence; not a Git repository or fulfillment of missing original-outline requirements.",
+  "excluded": "Virtual environment, OCR weights, credentials, Git history, unrelated desktop screenshots and lock files"
+}

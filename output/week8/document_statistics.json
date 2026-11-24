@@ -1,0 +1,8 @@
+{
+  "scope": "第一章至第十章正文，不含标题、摘要、参考文献、附录、图表说明",
+  "chinese_characters": 10996,
+  "minimum_required": 8000,
+  "meets_requirement": true,
+  "count_method": "regex U+4E00 through U+9FFF on non-heading main-body paragraphs",
+  "source": "output/week8/结项报告_最终正文.md"
+}
